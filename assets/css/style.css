@@ -1314,7 +1314,7 @@ a.cia-row:hover { background: rgba(201,169,97,0.13); }
 }
 .wechat-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 132px;
+  grid-template-columns: minmax(0, 1fr) 112px;
   align-items: center;
   gap: 16px;
   margin: -2px 0 28px;
@@ -1329,10 +1329,10 @@ a.cia-row:hover { background: rgba(201,169,97,0.13); }
   color: rgba(245,242,235,0.86);
 }
 .wechat-card img {
-  width: 132px;
+  width: 112px;
   aspect-ratio: 1;
   display: block;
-  border-radius: 18px;
+  border-radius: 16px;
   box-shadow: 0 14px 34px rgba(0,0,0,0.28);
 }
 .cia-hours {
@@ -1515,7 +1515,7 @@ a.cia-row:hover { background: rgba(201,169,97,0.13); }
     justify-items: start;
   }
   .wechat-card img {
-    width: min(100%, 180px);
+    width: min(100%, 132px);
   }
   .map-drawer { width: 100vw; }
   .map-drawer-header { padding: 24px 20px 18px; }
