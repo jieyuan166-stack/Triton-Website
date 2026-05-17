@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -oiE '\\(https?://[^\"'\"'\"' \\)]+\\\\.\\(mp4|webm|mov|m4v\\)\\)|video[^>]*src=[^>]+|<source[^>]+|video.wixstatic[^\"'\"'\"' \\)]+|youtube\\\\.com/embed/[^\"'\"'\"' \\)]+|youtu\\\\.be/[^\"'\"'\"' \\)]+|vimeo\\\\.com/[0-9]+' /tmp/triton_home.html /tmp/triton_about.html /tmp/triton_services.html /tmp/triton_workshops.html /tmp/triton_parners.html /tmp/triton_contact.html 2>/dev/null | sort -u | head -50)",
+      "Bash(curl -sL -A \"Mozilla/5.0\" -o video/hero-720.mp4 \"https://video.wixstatic.com/video/f10937_ebbb3a319025450da044831c83da73a2/720p/mp4/file.mp4\" -w \"720p: HTTP=%{http_code} SIZE=%{size_download}\\\\n\")",
+      "Bash(curl -sL -A \"Mozilla/5.0\" -o images/hero-poster.jpg \"https://static.wixstatic.com/media/f10937_ebbb3a319025450da044831c83da73a2f000.jpg\" -w \"poster: HTTP=%{http_code} SIZE=%{size_download}\\\\n\")",
+      "Bash(python3)",
+      "Bash(pip3 install *)",
+      "Bash(python3 -c \"from PIL import Image; print\\('OK'\\)\")",
+      "Bash(sips -g pixelWidth -g pixelHeight triton-logo.png)",
+      "Bash(sips --cropToHeightWidth 774 800 --cropOffset 0 0 triton-logo.png --out triton-emblem.png)",
+      "Bash(sips -g pixelWidth -g pixelHeight triton-emblem.png)",
+      "Bash(sips --cropToHeightWidth 774 720 --cropOffset 0 -833 triton-logo.png --out triton-emblem.png)",
+      "Bash(sips --cropToHeightWidth 774 720 --cropOffset 0 833 triton-logo.png --out triton-emblem.png)",
+      "Bash(python3 -c \"from PIL import Image; print\\('Pillow ready'\\)\")"
+    ]
+  }
+}
