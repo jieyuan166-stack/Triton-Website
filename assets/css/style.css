@@ -1312,6 +1312,29 @@ a.cia-row:hover { background: rgba(201,169,97,0.13); }
   color: var(--c-cream);
   line-height: 1.65;
 }
+.wechat-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 132px;
+  align-items: center;
+  gap: 16px;
+  margin: -2px 0 28px;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(201,169,97,0.32);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.08), rgba(201,169,97,0.08)),
+    rgba(255,255,255,0.035);
+}
+.wechat-card-copy .cia-val {
+  color: rgba(245,242,235,0.86);
+}
+.wechat-card img {
+  width: 132px;
+  aspect-ratio: 1;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(0,0,0,0.28);
+}
 .cia-hours {
   padding-top: 22px;
   border-top: 1px solid rgba(201,169,97,0.18);
@@ -1486,6 +1509,14 @@ a.cia-row:hover { background: rgba(201,169,97,0.13); }
 @media (max-width: 640px) {
   .contact-form-wrap { padding: 32px 24px; }
   .contact-form .form-grid { grid-template-columns: 1fr; }
+  .contact-info-aside { padding: 32px 24px; }
+  .wechat-card {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+  .wechat-card img {
+    width: min(100%, 180px);
+  }
   .map-drawer { width: 100vw; }
   .map-drawer-header { padding: 24px 20px 18px; }
   .map-drawer-footer { padding: 16px 20px; }
