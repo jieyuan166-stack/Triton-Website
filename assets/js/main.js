@@ -35,6 +35,31 @@
     else a.classList.remove('active');
   });
 
+  // --- Contact form mailto fallback ---
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(contactForm);
+      const name = (data.get('姓名') || '').toString().trim();
+      const phone = (data.get('电话') || '').toString().trim();
+      const email = (data.get('邮箱') || '').toString().trim();
+      const type = (data.get('咨询类型') || '').toString().trim();
+      const message = (data.get('留言') || '').toString().trim();
+      const subject = `Triton Wealth 咨询${name ? ` - ${name}` : ''}`;
+      const body = [
+        `姓名: ${name}`,
+        `电话: ${phone || '未填写'}`,
+        `邮箱: ${email}`,
+        `咨询类型: ${type || '未选择'}`,
+        '',
+        '留言:',
+        message || '未填写'
+      ].join('\n');
+      window.location.href = `mailto:info@tritonwealth.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  }
+
   // --- Reveal on scroll ---
   const revealTargets = document.querySelectorAll(
     '.intro-grid, .service-card, .cta-inner, .feature-item, .section-head'
