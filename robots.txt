@@ -1,0 +1,24 @@
+# Triton Wealth Management - 富瑞财富
+# https://www.tritonwealth.ca
+
+User-agent: *
+Allow: /
+
+# Block duplicate flat URLs - prefer pretty URLs for indexing
+Disallow: /about.html
+Disallow: /services.html
+Disallow: /partners.html
+Disallow: /workshops.html
+Disallow: /contact.html
+Disallow: /legal-disclaimers.html
+Disallow: /terms.html
+
+# Block utility directories
+Disallow: /assets/docs/
+Disallow: /scripts/
+Disallow: /backups/
+
+# Allow asset access for search engine image indexing
+Allow: /assets/images/
+
+Sitemap: https://www.tritonwealth.ca/sitemap.xml

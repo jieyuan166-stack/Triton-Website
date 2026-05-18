@@ -78,7 +78,7 @@ fi
 
 # --- Pull first to avoid push conflicts ---
 log "Pulling ${SRC_NAME} from GitHub first…"
-git -C "$SRC" pull --rebase
+git -C "$SRC" pull --rebase --autostash
 
 # --- Commit + push ---
 log "Committing on ${SRC_NAME}…"
