@@ -1616,16 +1616,32 @@ a.cia-row--featured:hover::before {
   .contact-form-wrap { padding: 32px 24px; }
   .contact-form .form-grid { grid-template-columns: 1fr; }
   .contact-info-aside { padding: 32px 24px; }
+  /* Mobile WeChat card — center stack, QR larger, no right-side gap */
   .wechat-card {
     grid-template-columns: 1fr;
-    justify-items: start;
+    justify-items: center;
+    text-align: center;
+    padding: 22px 16px 26px;
+    gap: 18px;
+  }
+  .wechat-card-copy {
+    width: 100%;
   }
   .wechat-card img {
-    width: min(100%, 132px);
+    width: min(72%, 200px);
+    margin: 0 auto;
   }
   .map-drawer { width: 100vw; }
   .map-drawer-header { padding: 24px 20px 18px; }
   .map-drawer-footer { padding: 16px 20px; }
+
+  /* Footer — stack copyright + legal links on their own lines */
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: left;
+  }
 }
 
 /* ---------- Language Toggle ---------- */
