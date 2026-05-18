@@ -631,9 +631,10 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   background-repeat: no-repeat;
 }
 
-/* About — modern office corridor */
+/* About — Vancouver downtown waterfront aerial */
 .page-header--about {
   background-image: url('../images/banners/about.webp');
+  background-position: center 50%;
 }
 .page-header--about::before {
   content: ""; position: absolute; inset: 0;
@@ -678,10 +679,10 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   pointer-events: none;
 }
 
-/* Workshops — conference hall with speaker */
+/* Workshops — audience with bokeh light wall */
 .page-header--workshops {
   background-image: url('../images/banners/workshops.webp');
-  background-position: center 50%;
+  background-position: center 40%;
 }
 .page-header--workshops::before {
   content: ""; position: absolute; inset: 0;
@@ -694,18 +695,18 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   pointer-events: none;
 }
 
-/* Contact — ocean wave at dusk (Triton brand connection) */
+/* Contact — Vancouver skyline with mountains */
 .page-header--contact {
   background-image: url('../images/banners/contact.webp');
-  background-position: center 60%;
+  background-position: center 40%;
 }
 .page-header--contact::before {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(11,30,63,0.78) 0%,
-    rgba(11,30,63,0.55) 45%,
-    rgba(5,20,45,0.75) 100%
+    rgba(11,30,63,0.88) 0%,
+    rgba(11,30,63,0.70) 45%,
+    rgba(5,20,45,0.85) 100%
   );
   pointer-events: none;
 }
