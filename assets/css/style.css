@@ -467,6 +467,29 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 }
 .footer-bottom a:hover { color: var(--c-gold); }
 
+/* Footer Office Hours — proper grid alignment (no full-width-space hacks) */
+.footer-hours ul li,
+.footer-hours-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.footer-hours ul li span:last-child,
+.footer-hours-list li span:last-child {
+  color: rgba(245,242,235,0.5);
+  white-space: nowrap;
+}
+
+/* Footer bottom — copyright + legal links stacked on tablets & phones */
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
 /* ---------- Reveal animation ---------- */
 .reveal {
   opacity: 0; transform: translateY(36px);
@@ -1635,13 +1658,6 @@ a.cia-row--featured:hover::before {
   .map-drawer-header { padding: 24px 20px 18px; }
   .map-drawer-footer { padding: 16px 20px; }
 
-  /* Footer — stack copyright + legal links on their own lines */
-  .footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    text-align: left;
-  }
 }
 
 /* ---------- Language Toggle ---------- */
