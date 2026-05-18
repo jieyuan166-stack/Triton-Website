@@ -1352,10 +1352,8 @@ a.cia-row--featured:hover::before {
   color: var(--c-gold-soft);
 }
 .cia-row--featured .cia-icon {
-  background: var(--c-gold);
-  color: var(--c-bg-deep);
-  border-color: var(--c-gold);
   flex-shrink: 0;
+  /* Match phone/email: hollow circle with gold border (inherits from base .cia-icon) */
 }
 .cia-row--featured .cia-lbl { color: var(--c-gold); }
 .cia-row--featured .cia-val {
