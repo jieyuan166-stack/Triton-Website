@@ -631,9 +631,9 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   background-repeat: no-repeat;
 }
 
-/* About — warm portrait tone */
+/* About — modern office corridor */
 .page-header--about {
-  background-image: url('../images/hero-poster.jpg');
+  background-image: url('../images/banners/about.webp');
 }
 .page-header--about::before {
   content: ""; position: absolute; inset: 0;
@@ -646,10 +646,10 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   pointer-events: none;
 }
 
-/* Services — deep blue focus */
+/* Services — luxury boardroom interior */
 .page-header--services {
-  background-image: url('../images/hero-poster.jpg');
-  background-position: center 30%;
+  background-image: url('../images/banners/services.webp');
+  background-position: center 50%;
 }
 .page-header--services::before {
   content: ""; position: absolute; inset: 0;
@@ -662,10 +662,10 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   pointer-events: none;
 }
 
-/* Partners — neutral dark */
+/* Partners — financial district glass towers */
 .page-header--partners {
-  background-image: url('../images/hero-poster.jpg');
-  background-position: center 40%;
+  background-image: url('../images/banners/partners.webp');
+  background-position: center 60%;
 }
 .page-header--partners::before {
   content: ""; position: absolute; inset: 0;
@@ -678,10 +678,10 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   pointer-events: none;
 }
 
-/* Workshops — gold accent */
+/* Workshops — conference hall with speaker */
 .page-header--workshops {
-  background-image: url('../images/hero-poster.jpg');
-  background-position: center 60%;
+  background-image: url('../images/banners/workshops.webp');
+  background-position: center 50%;
 }
 .page-header--workshops::before {
   content: ""; position: absolute; inset: 0;
@@ -694,18 +694,18 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   pointer-events: none;
 }
 
-/* Contact — cool dark */
+/* Contact — ocean wave at dusk (Triton brand connection) */
 .page-header--contact {
-  background-image: url('../images/hero-poster.jpg');
-  background-position: center 70%;
+  background-image: url('../images/banners/contact.webp');
+  background-position: center 60%;
 }
 .page-header--contact::before {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(
-    150deg,
-    rgba(11,30,63,0.92) 0%,
-    rgba(11,30,63,0.78) 50%,
-    rgba(5,20,45,0.88) 100%
+    180deg,
+    rgba(11,30,63,0.78) 0%,
+    rgba(11,30,63,0.55) 45%,
+    rgba(5,20,45,0.75) 100%
   );
   pointer-events: none;
 }
