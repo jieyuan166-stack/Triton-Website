@@ -106,7 +106,7 @@
   <link rel="icon" href="/favicon.ico?v=b3251030" sizes="any" />
   <link rel="icon" href="/icon.png?v=613e0621" type="image/png" sizes="512x512" />
   <link rel="apple-touch-icon" href="/apple-icon.png?v=69cac185" type="image/png" sizes="180x180" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=92aad599" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=862214c2" />
   <!-- SEO:breadcrumb -->
   <script type="application/ld+json">
 {
@@ -240,13 +240,18 @@
             <p>办公室对外开放，欢迎来访 — 或直接拨打电话、扫码加微信预约。</p>
           </div>
 
-          <!-- 1. Address (prominent at top) -->
-          <a href="#" class="cia-row cia-row--featured" id="mapDrawerOpen" role="button" aria-label="查看办公室地图">
-            <div class="cia-icon">⌖</div>
+          <!-- 1. Address — pull-out drawer to reveal Google Map -->
+          <a href="#" class="cia-row cia-row--featured" id="mapDrawerOpen" role="button" aria-label="拉开查看办公室地图">
+            <div class="cia-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4.2 6.2 9 4l6 2.2 4.8-2.1v13.7L15 20l-6-2.2-4.8 2.1V6.2Z" />
+                <path d="M9 4v13.8M15 6.2V20" />
+              </svg>
+            </div>
             <div class="cia-grow">
               <div class="cia-lbl">Vancouver Office</div>
               <div class="cia-val">#1200 - 1200 W 73rd Avenue<br/>Vancouver, BC V6P 6G5</div>
-              <div class="cia-tap">点击查看地图 →</div>
+              <div class="cia-tap">拉开查看地图</div>
             </div>
           </a>
 
