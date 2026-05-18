@@ -53,7 +53,7 @@ PAGES = {
     "contact.html": {
         "url": f"{DOMAIN}/contact/",
         "title": "联系我们 | 温哥华办公室 · 预约免费咨询 | 富瑞财富",
-        "description": "富瑞财富温哥华办公室：#1500 - 1200 W 73rd Avenue, Vancouver, BC V6P 6G5。电话 BC 778.837.6688 / 604.345.5188，AB 403.869.6886。Email info@tritonwealth.ca。营业时间 Mon-Fri 9:00-17:00，欢迎预约免费初步咨询。",
+        "description": "富瑞财富温哥华办公室：#1200 - 1200 W 73rd Avenue, Vancouver, BC V6P 6G5。电话 BC 778.837.6688 / 604.345.5188，AB 403.869.6886。Email info@tritonwealth.ca。营业时间 Mon-Fri 9:00-17:00，欢迎预约免费初步咨询。",
         "keywords": "联系富瑞财富,温哥华理财顾问联系方式,Vancouver financial advisor,免费咨询预约,Triton Wealth contact",
         "og_type": "website",
     },
@@ -93,7 +93,7 @@ ORG_JSONLD = '''<script type="application/ld+json">
   "email": "info@tritonwealth.ca",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "#1500 - 1200 W 73rd Avenue",
+    "streetAddress": "#1200 - 1200 W 73rd Avenue",
     "addressLocality": "Vancouver",
     "addressRegion": "BC",
     "postalCode": "V6P 6G5",

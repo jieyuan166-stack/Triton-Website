@@ -19,8 +19,14 @@ done
 CSS_HASH=$(md5 -q assets/css/style.css | cut -c1-8)
 JS_HASH=$(md5 -q assets/js/main.js | cut -c1-8)
 
-echo "  style.css hash: $CSS_HASH"
-echo "  main.js   hash: $JS_HASH"
+# Hash favicons (root-level) so HTML refs auto-refresh
+FAV_HASH=$(md5 -q favicon.ico | cut -c1-8)
+ICON_HASH=$(md5 -q icon.png | cut -c1-8)
+APPLE_HASH=$(md5 -q apple-icon.png | cut -c1-8)
+
+echo "  style.css   hash: $CSS_HASH"
+echo "  main.js     hash: $JS_HASH"
+echo "  favicon.ico hash: $FAV_HASH"
 
 # Update all .html files
 # Pattern matches: style.css with or without existing ?v=...
@@ -35,6 +41,11 @@ for f in $(find . -name "*.html" -not -path "./.git/*" -not -path "./backups/*")
 
   # JS: same for main.js
   perl -i -pe "s{(assets/js/main\.js)(\?v=[^\"']*)?}{\$1?v=$JS_HASH}g" "$f"
+
+  # Favicon / icon / apple-icon (root-level absolute or relative)
+  perl -i -pe "s{(/?favicon\.ico)(\?v=[^\"']*)?}{\$1?v=$FAV_HASH}g" "$f"
+  perl -i -pe "s{(/?icon\.png)(\?v=[^\"']*)?}{\$1?v=$ICON_HASH}g" "$f"
+  perl -i -pe "s{(/?apple-icon\.png)(\?v=[^\"']*)?}{\$1?v=$APPLE_HASH}g" "$f"
 
   after=$(md5 -q "$f" 2>/dev/null || md5sum "$f" | cut -d' ' -f1)
   if [ "$before" != "$after" ]; then

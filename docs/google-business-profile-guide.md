@@ -12,7 +12,7 @@
 | **商家名** | `Triton Wealth Management 富瑞财富` |
 | **类别（主）** | `Financial Consultant` 或 `Insurance Agency` |
 | **类别（副）** | `Financial Planner`, `Investment Service`, `Retirement Planning Service` |
-| **地址** | #1500 - 1200 W 73rd Avenue, Vancouver, BC V6P 6G5 |
+| **地址** | #1200 - 1200 W 73rd Avenue, Vancouver, BC V6P 6G5 |
 | **电话（主）** | +1-778-837-6688 |
 | **电话（副）** | +1-604-345-5188 |
 | **网站** | https://www.tritonwealth.ca |
