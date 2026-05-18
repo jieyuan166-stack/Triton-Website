@@ -681,7 +681,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 
 /* Workshops — audience with bokeh light wall */
 .page-header--workshops {
-  background-image: url('../images/banners/workshops.webp?v=7d73b7b3');
+  background-image: url('../images/banners/workshops.webp?v=a3438e54');
   background-position: center 40%;
 }
 .page-header--workshops::before {
@@ -697,7 +697,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 
 /* Contact — Vancouver skyline with mountains */
 .page-header--contact {
-  background-image: url('../images/banners/contact.webp?v=7a4cd784');
+  background-image: url('../images/banners/contact.webp?v=e08870df');
   background-position: center 40%;
 }
 .page-header--contact::before {
