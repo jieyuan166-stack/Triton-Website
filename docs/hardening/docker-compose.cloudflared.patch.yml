@@ -1,0 +1,35 @@
+# Patch for docker-compose.yml (CRM project)
+# Add healthcheck to the cloudflared service so Docker auto-restarts
+# the container if the tunnel binary stops responding to its own
+# /ready endpoint even though the process is still alive.
+#
+# Apply: edit /volume1/docker/triton-crm/docker/docker-compose.yml
+# and add the healthcheck block below to the cloudflared service.
+# Then: cd /volume1/docker/triton-crm/docker && docker compose up -d cloudflared
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: triton-tunnel
+    restart: unless-stopped
+    command: tunnel --no-autoupdate --metrics 0.0.0.0:2000 --config /etc/cloudflared/config.yml run
+    # ^^^ NEW: --metrics 0.0.0.0:2000 exposes /ready for healthcheck
+    volumes:
+      - /volume1/docker/triton-crm/cloudflared:/etc/cloudflared:ro
+    networks:
+      - triton-net
+    depends_on:
+      triton-crm:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1:2000/ready || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+    # With restart: unless-stopped + healthcheck:
+    #   - if tunnel connector loses connection to Cloudflare edge,
+    #     the /ready endpoint returns 503
+    #   - docker will mark container unhealthy after 3×30s = 1.5 min
+    #   - depending on swarm/restart config, container is killed and
+    #     restarted automatically
+    # This means recovery in ≤ 2 minutes even without the watchdog.
