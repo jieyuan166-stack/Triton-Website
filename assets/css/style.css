@@ -633,7 +633,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 
 /* About — Vancouver downtown waterfront aerial */
 .page-header--about {
-  background-image: url('../images/banners/about.webp?v=92610dde');
+  background-image: url('../images/banners/about.webp?v=f50c9223');
   background-position: center 50%;
 }
 .page-header--about::before {
@@ -681,7 +681,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 
 /* Workshops — audience with bokeh light wall */
 .page-header--workshops {
-  background-image: url('../images/banners/workshops.webp?v=a3438e54');
+  background-image: url('../images/banners/workshops.webp?v=e706f655');
   background-position: center 40%;
 }
 .page-header--workshops::before {
