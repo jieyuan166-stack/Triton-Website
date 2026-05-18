@@ -35,6 +35,12 @@ if [ "$1" = "--pull" ]; then
   exit 0
 fi
 
+# --- Auto-bump CSS/JS cache-busting version (only if changed) ---
+if [ -x "$LOCAL/scripts/bump-version.sh" ]; then
+  log "Auto-bumping CSS/JS version…"
+  (cd "$LOCAL" && ./scripts/bump-version.sh)
+fi
+
 # --- Detect which side has changes ---
 LOCAL_DIRTY=$(git -C "$LOCAL" status --porcelain | wc -l | tr -d ' ')
 NAS_DIRTY=$(git -C "$NAS" status --porcelain | wc -l | tr -d ' ')
