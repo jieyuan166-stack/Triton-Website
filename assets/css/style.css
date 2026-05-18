@@ -1178,7 +1178,47 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 .coming-soon p { color: var(--c-text-soft); }
 
 /* ---------- Contact ---------- */
-.contact-main-section { background: var(--c-cream); }
+.contact-main-section {
+  background: var(--c-cream);
+  position: relative;
+  overflow: hidden;
+}
+/* Subtle Vancouver map background — low opacity, monochrome, evokes location */
+.contact-main-section::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: url('../images/banners/contact-map-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  filter: grayscale(0.7) sepia(0.15) brightness(1.05) contrast(1.05);
+  pointer-events: none;
+  z-index: 0;
+}
+/* Gold pin marker on the map background where the office is */
+.contact-main-section::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px; height: 18px;
+  background: var(--c-gold);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 5px rgba(201,169,97,0.2),
+    0 0 0 14px rgba(201,169,97,0.1),
+    0 0 30px rgba(201,169,97,0.4);
+  animation: pinPulse 3s ease-in-out infinite;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+@keyframes pinPulse {
+  0%, 100% { box-shadow: 0 0 0 5px rgba(201,169,97,0.2), 0 0 0 14px rgba(201,169,97,0.1), 0 0 30px rgba(201,169,97,0.4); }
+  50%      { box-shadow: 0 0 0 10px rgba(201,169,97,0.15), 0 0 0 24px rgba(201,169,97,0.08), 0 0 40px rgba(201,169,97,0.5); }
+}
+.contact-main-section > .container { position: relative; z-index: 1; }
 
 .contact-two-col {
   display: grid;
@@ -1290,6 +1330,67 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   transition: background .25s;
 }
 a.cia-row:hover { background: rgba(201,169,97,0.13); }
+
+/* Featured row — address shown as a prominent map preview card */
+.cia-row--featured {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px 20px 18px;
+  margin-bottom: 22px;
+  background:
+    linear-gradient(135deg, rgba(11,30,63,0.85) 0%, rgba(11,30,63,0.55) 60%, rgba(11,30,63,0.85) 100%),
+    url('../images/banners/contact-map-bg.webp');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(201,169,97,0.3);
+  border-radius: 10px;
+  position: relative; overflow: hidden;
+  transition: all .35s ease;
+}
+.cia-row--featured::before {
+  content: ""; position: absolute; top: 14px; right: 14px;
+  width: 14px; height: 14px;
+  background: var(--c-gold); border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(201,169,97,0.25), 0 0 0 9px rgba(201,169,97,0.15);
+  animation: pinPulse 2.5s ease-in-out infinite;
+}
+a.cia-row--featured:hover {
+  background:
+    linear-gradient(135deg, rgba(11,30,63,0.7) 0%, rgba(11,30,63,0.4) 60%, rgba(11,30,63,0.7) 100%),
+    url('../images/banners/contact-map-bg.webp');
+  border-color: var(--c-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(11,30,63,0.4);
+}
+.cia-row--featured .cia-icon {
+  background: var(--c-gold);
+  color: var(--c-bg-deep);
+  border-color: var(--c-gold);
+}
+.cia-row--featured .cia-lbl {
+  color: var(--c-gold);
+}
+.cia-row--featured .cia-val {
+  color: var(--c-cream);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.cia-grow { width: 100%; }
+.cia-tap {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(201,169,97,0.25);
+  font-family: var(--f-sans-en);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.cia-row--featured:hover .cia-tap::after {
+  transform: translateX(4px);
+}
 .cia-icon {
   width: 34px; height: 34px;
   border-radius: 50%;

@@ -106,7 +106,7 @@
   <link rel="icon" href="/favicon.ico?v=b3251030" sizes="any" />
   <link rel="icon" href="/icon.png?v=613e0621" type="image/png" sizes="512x512" />
   <link rel="apple-touch-icon" href="/apple-icon.png?v=69cac185" type="image/png" sizes="180x180" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=6cf92901" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=92aad599" />
   <!-- SEO:breadcrumb -->
   <script type="application/ld+json">
 {
@@ -237,9 +237,20 @@
           <div class="cia-header">
             <span class="eyebrow" style="color:rgba(245,242,235,0.55);">We're Here For You</span>
             <h3>随时欢迎您的联系</h3>
-            <p>如果您希望尽快得到回应，欢迎直接拨打电话，或预约线下 / 视频会面。</p>
+            <p>办公室对外开放，欢迎来访 — 或直接拨打电话、扫码加微信预约。</p>
           </div>
 
+          <!-- 1. Address (prominent at top) -->
+          <a href="#" class="cia-row cia-row--featured" id="mapDrawerOpen" role="button" aria-label="查看办公室地图">
+            <div class="cia-icon">⌖</div>
+            <div class="cia-grow">
+              <div class="cia-lbl">Vancouver Office</div>
+              <div class="cia-val">#1200 - 1200 W 73rd Avenue<br/>Vancouver, BC V6P 6G5</div>
+              <div class="cia-tap">点击查看地图 →</div>
+            </div>
+          </a>
+
+          <!-- 2. Phones -->
           <div class="cia-rows">
             <a href="tel:+17788376688" class="cia-row">
               <div class="cia-icon">☎</div>
@@ -264,6 +275,14 @@
             </a>
           </div>
 
+          <!-- 3. Office Hours -->
+          <div class="cia-hours">
+            <div class="cia-lbl" style="margin-bottom:10px;">Office Hours</div>
+            <div class="cia-hours-row"><span>Mon – Fri</span><span>9:00 – 17:00</span></div>
+            <div class="cia-hours-row"><span>Sat &amp; Sun</span><span>预约制</span></div>
+          </div>
+
+          <!-- 4. WeChat (last) -->
           <div class="wechat-card" aria-label="WeChat QR code">
             <div class="wechat-card-copy">
               <div class="cia-lbl">WeChat</div>
@@ -271,24 +290,6 @@
             </div>
             <img src="/assets/images/social/wechat-qr-jeffrey.png?v=20260517" alt="Jeffrey Yuan WeChat QR code" loading="lazy" />
           </div>
-
-          <div class="cia-hours">
-            <div class="cia-lbl" style="margin-bottom:10px;">Office Hours</div>
-            <div class="cia-hours-row"><span>Mon – Fri</span><span>9:00 – 17:00</span></div>
-            <div class="cia-hours-row"><span>Sat &amp; Sun</span><span>预约制</span></div>
-          </div>
-
-          <!-- Map drawer trigger -->
-          <button class="map-drawer-btn" id="mapDrawerOpen" aria-label="查看地图">
-            <span class="map-drawer-btn-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M4.2 6.2 9 4l6 2.2 4.8-2.1v13.7L15 20l-6-2.2-4.8 2.1V6.2Z" />
-                <path d="M9 4v13.8M15 6.2V20" />
-              </svg>
-            </span>
-            <span>#1200 - 1200 W 73rd Ave, Vancouver, BC V6P 6G5</span>
-            <span class="map-drawer-btn-arrow">→</span>
-          </button>
         </aside>
 
       </div>
@@ -376,7 +377,8 @@
     const drawer   = document.getElementById('mapDrawer');
     const iframe   = document.getElementById('mapIframe');
 
-    function openDrawer() {
+    function openDrawer(e) {
+      if (e && e.preventDefault) e.preventDefault();
       // Lazy-load the iframe src on first open
       if (!iframe.src || iframe.src === window.location.href) {
         iframe.src = iframe.dataset.src;
