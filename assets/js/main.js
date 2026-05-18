@@ -28,9 +28,14 @@
   }
 
   // --- Active nav ---
-  const path = location.pathname.split('/').pop() || 'index.html';
+  const normalizePath = (value) => {
+    const url = new URL(value, location.origin);
+    const pathname = url.pathname.replace(/\/index\.html$/, '/');
+    return pathname.endsWith('/') ? pathname : `${pathname}/`;
+  };
+  const path = normalizePath(location.href);
   document.querySelectorAll('.nav-list a').forEach(a => {
-    const href = a.getAttribute('href');
+    const href = normalizePath(a.getAttribute('href'));
     if (href === path) a.classList.add('active');
     else a.classList.remove('active');
   });
