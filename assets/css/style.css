@@ -1384,6 +1384,12 @@ a.cia-row:hover { background: rgba(201,169,97,0.13); }
   line-height: 1;
   flex-shrink: 0;
 }
+.map-drawer-btn-icon svg {
+  width: 17px;
+  height: 17px;
+  display: block;
+  fill: currentColor;
+}
 .map-drawer-btn span:nth-child(2) { flex: 1; }
 .map-drawer-btn-arrow {
   color: var(--c-gold);
