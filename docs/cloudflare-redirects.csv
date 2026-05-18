@@ -1,0 +1,13 @@
+source_url,target_url,status_code,preserve_query_string
+https://www.tritonwealth.ca/index.html,https://www.tritonwealth.ca/,301,true
+https://www.tritonwealth.ca/about.html,https://www.tritonwealth.ca/about/,301,true
+https://www.tritonwealth.ca/services.html,https://www.tritonwealth.ca/services/,301,true
+https://www.tritonwealth.ca/partners.html,https://www.tritonwealth.ca/partners/,301,true
+https://www.tritonwealth.ca/workshops.html,https://www.tritonwealth.ca/workshops/,301,true
+https://www.tritonwealth.ca/contact.html,https://www.tritonwealth.ca/contact/,301,true
+https://www.tritonwealth.ca/legal-disclaimers.html,https://www.tritonwealth.ca/legal-disclaimers/,301,true
+https://www.tritonwealth.ca/terms.html,https://www.tritonwealth.ca/terms/,301,true
+https://www.tritonwealth.ca/parners,https://www.tritonwealth.ca/partners/,301,true
+https://www.tritonwealth.ca/parners.html,https://www.tritonwealth.ca/partners/,301,true
+https://www.tritonwealth.ca/copy-of-privary-policy,https://www.tritonwealth.ca/legal-disclaimers/,301,true
+https://www.tritonwealth.ca/copy-of-legal-disclaimers,https://www.tritonwealth.ca/terms/,301,true
