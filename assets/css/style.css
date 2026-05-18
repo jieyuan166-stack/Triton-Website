@@ -633,7 +633,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 
 /* About — Vancouver downtown waterfront aerial */
 .page-header--about {
-  background-image: url('../images/banners/about.webp');
+  background-image: url('../images/banners/about.webp?v=92610dde');
   background-position: center 50%;
 }
 .page-header--about::before {
@@ -649,7 +649,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 
 /* Services — luxury boardroom interior */
 .page-header--services {
-  background-image: url('../images/banners/services.webp');
+  background-image: url('../images/banners/services.webp?v=628ab96b');
   background-position: center 50%;
 }
 .page-header--services::before {
@@ -665,7 +665,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 
 /* Partners — financial district glass towers */
 .page-header--partners {
-  background-image: url('../images/banners/partners.webp');
+  background-image: url('../images/banners/partners.webp?v=ca6e72c9');
   background-position: center 60%;
 }
 .page-header--partners::before {
@@ -681,7 +681,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 
 /* Workshops — audience with bokeh light wall */
 .page-header--workshops {
-  background-image: url('../images/banners/workshops.webp');
+  background-image: url('../images/banners/workshops.webp?v=7d73b7b3');
   background-position: center 40%;
 }
 .page-header--workshops::before {
@@ -697,7 +697,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 
 /* Contact — Vancouver skyline with mountains */
 .page-header--contact {
-  background-image: url('../images/banners/contact.webp');
+  background-image: url('../images/banners/contact.webp?v=7a4cd784');
   background-position: center 40%;
 }
 .page-header--contact::before {

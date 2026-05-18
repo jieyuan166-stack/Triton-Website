@@ -1,11 +1,21 @@
 #!/usr/bin/env bash
-# Auto-bump cache-busting version on CSS/JS based on file content hash.
-# Run before each sync. If CSS/JS unchanged → hash unchanged → no rewrite.
+# Auto-bump cache-busting version on CSS/JS/banner images based on content hash.
+# Run before each sync. If file unchanged → hash unchanged → no rewrite.
 
 set -e
 cd "$(dirname "$0")/.."
 
-# Compute 8-char content hash of style.css and main.js
+# --- Step 1: Version-bump banner images inside style.css (each by its own hash) ---
+for banner in about services partners workshops contact; do
+  img="assets/images/banners/${banner}.webp"
+  if [ -f "$img" ]; then
+    IMG_HASH=$(md5 -q "$img" | cut -c1-8)
+    # Replace ?v=XXX after banners/{name}.webp (or add if missing)
+    perl -i -pe "s{(banners/${banner}\.webp)(\?v=[a-z0-9]+)?}{\$1?v=${IMG_HASH}}g" assets/css/style.css
+  fi
+done
+
+# --- Step 2: Compute hash of CSS/JS (which now includes the updated image versions) ---
 CSS_HASH=$(md5 -q assets/css/style.css | cut -c1-8)
 JS_HASH=$(md5 -q assets/js/main.js | cut -c1-8)
 
