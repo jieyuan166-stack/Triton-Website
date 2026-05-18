@@ -49,7 +49,7 @@ def person_ld():
       "givenName": "Jeffrey",
       "familyName": "Yuan",
       "jobTitle": "President & Founding Partner",
-      "image": "{DOMAIN}/assets/images/founders/jeffrey-yuan.png",
+      "image": "{DOMAIN}/assets/images/founders/jeffrey-yuan.webp",
       "worksFor": {{"@id": "{DOMAIN}/#organization"}},
       "knowsLanguage": ["zh-CN", "en"],
       "hasCredential": [
@@ -65,7 +65,7 @@ def person_ld():
       "givenName": "Claire",
       "familyName": "Qiu",
       "jobTitle": "Director",
-      "image": "{DOMAIN}/assets/images/founders/claire-qiu.png",
+      "image": "{DOMAIN}/assets/images/founders/claire-qiu.webp",
       "worksFor": {{"@id": "{DOMAIN}/#organization"}},
       "knowsLanguage": ["zh-CN", "en"],
       "hasCredential": [
