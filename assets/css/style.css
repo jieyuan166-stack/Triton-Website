@@ -1371,7 +1371,19 @@ a.cia-row:hover { background: rgba(201,169,97,0.13); }
   background: rgba(201,169,97,0.15);
   border-color: var(--c-gold);
 }
-.map-drawer-btn-icon { color: var(--c-gold); font-size: 1rem; flex-shrink: 0; }
+.map-drawer-btn-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(201,169,97,0.12);
+  border: 1px solid rgba(201,169,97,0.28);
+  display: grid;
+  place-items: center;
+  color: var(--c-gold);
+  font-size: 1rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
 .map-drawer-btn span:nth-child(2) { flex: 1; }
 .map-drawer-btn-arrow {
   color: var(--c-gold);
