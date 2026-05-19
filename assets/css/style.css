@@ -567,7 +567,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   padding: 92px 0 34px;
 }
 .footer-grid {
-  display: grid; grid-template-columns: 1.35fr 0.85fr 1.1fr 1.2fr; gap: 72px;
+  display: grid; grid-template-columns: 1.15fr 1.55fr 1fr 1.05fr; gap: 56px;
   padding-bottom: 72px;
   border-bottom: 1px solid var(--c-line-soft);
 }
@@ -582,7 +582,10 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 .footer-grid .footer-brand .logo { margin-bottom: 28px; }
 .footer-grid .footer-brand p { font-size: 0.86rem; line-height: 1.9; max-width: 280px; }
 .footer-nav ul {
-  display: block;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 10px 24px;
+  align-items: start;
 }
 .footer-nav a { white-space: nowrap; }
 .footer-nav ul li,
@@ -591,6 +594,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 .footer-hours-list li {
   margin-bottom: 15px;
 }
+.footer-nav ul li { margin-bottom: 0; }
 .footer-bottom {
   padding-top: 30px;
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;
@@ -1911,6 +1915,11 @@ a.cia-row--featured:hover::before {
   .footer-grid .footer-brand p { font-size: 0.72rem; line-height: 1.7; max-width: 28em; }
   .footer-grid h5 { margin-bottom: 14px; font-size: 0.58rem; letter-spacing: 0.2em; }
   .footer-grid ul li { margin-bottom: 9px; font-size: 0.72rem; line-height: 1.55; }
+  .footer-nav ul {
+    grid-template-columns: repeat(3, max-content);
+    gap: 8px 18px;
+  }
+  .footer-nav ul li { margin-bottom: 0; }
   .footer-hours ul li,
   .footer-hours-list li {
     justify-content: flex-start;
