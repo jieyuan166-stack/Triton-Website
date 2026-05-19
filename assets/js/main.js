@@ -67,7 +67,7 @@
 
   // --- Reveal on scroll ---
   const revealTargets = document.querySelectorAll(
-    '.intro-grid, .service-card, .cta-inner, .feature-item, .section-head'
+    '.intro-grid, .service-card, .cta-inner, .feature-item, .section-head, .testimonial-head, .testimonial-card'
   );
   revealTargets.forEach(el => el.classList.add('reveal'));
 
