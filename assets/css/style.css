@@ -355,7 +355,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 /* Carousel viewport: 3 cards desktop by default. */
 .testimonial-rail {
   --testimonial-gap: 24px;
-  --testimonial-card-width: calc((100% - (var(--testimonial-gap) * 2)) / 3);
+  --testimonial-card-width: clamp(188px, 15vw, 240px);
   overflow: hidden;
   padding: 8px 4px 20px;
   min-width: 0;
@@ -1259,9 +1259,19 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
     max-height: 30px;
   }
   .partner-block { padding: 34px 0 !important; }
-  .partner-block h2 { font-size: 1.08rem !important; padding-bottom: 10px !important; margin-bottom: 8px; }
+  .partner-block h2 {
+    font-size: 1.35rem !important;
+    line-height: 1.2;
+    padding-bottom: 10px !important;
+    margin-bottom: 8px;
+  }
   .partner-block h2::after { width: 32px !important; }
-  .partner-block .en-sub { font-size: 0.75rem; margin-bottom: 18px; letter-spacing: 0.08em; }
+  .partner-block .en-sub {
+    font-size: 0.65rem;
+    line-height: 1.35;
+    margin-bottom: 18px;
+    letter-spacing: 0.12em;
+  }
 }
 
 /* ---------- Workshops ---------- */
@@ -1846,7 +1856,7 @@ a.cia-row--featured:hover::before {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
-  .testimonial-rail { --testimonial-card-width: calc((100% - var(--testimonial-gap)) / 2); }
+  .testimonial-rail { --testimonial-card-width: clamp(220px, 44vw, 300px); }
 }
 
 @media (max-width: 1024px) {
@@ -1915,6 +1925,72 @@ a.cia-row--featured:hover::before {
 }
 
 @media (max-width: 640px) {
+  .section,
+  body.home-page .section,
+  body.mobile-compact-page .section {
+    padding: 42px 0;
+  }
+  .section-title,
+  body.home-page .section-title,
+  body.mobile-compact-page .section-title {
+    font-size: 1.35rem;
+    line-height: 1.2;
+    margin-top: 8px;
+    padding-bottom: 10px;
+  }
+  .section-title .en,
+  body.home-page .section-title .en,
+  body.mobile-compact-page .section-title .en {
+    font-size: 0.48em;
+    line-height: 1.35;
+    margin-top: 5px;
+    letter-spacing: 0.12em;
+  }
+  .eyebrow,
+  body.home-page .eyebrow,
+  body.mobile-compact-page .eyebrow {
+    gap: 9px;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+  }
+  .eyebrow::before,
+  body.home-page .eyebrow::before,
+  body.mobile-compact-page .eyebrow::before {
+    width: 22px;
+  }
+  p,
+  .lead p,
+  body.home-page .intro-grid .lead p,
+  body.mobile-compact-page .intro p,
+  .services .section-head p {
+    font-size: 0.86rem;
+    line-height: 1.6;
+  }
+  .page-header {
+    padding: 118px 0 42px;
+    min-height: 0;
+  }
+  .page-header h1 {
+    font-size: 1.75rem;
+    line-height: 1.16;
+    margin: 12px 0 8px;
+    letter-spacing: 0.03em;
+  }
+  .page-header .en-title {
+    font-size: 0.82rem;
+    line-height: 1.35;
+    letter-spacing: 0.12em;
+  }
+  .page-header .lead-text {
+    max-width: 31em;
+    font-size: 0.86rem;
+    line-height: 1.55;
+    margin-top: 10px;
+  }
+  .page-header .crumb {
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
   body.home-page .intro {
     padding: 42px 0 34px;
   }
@@ -2072,6 +2148,44 @@ a.cia-row--featured:hover::before {
   .testimonial-track { animation-duration: 72s; }
   .testimonial-card { min-height: 340px; padding: 22px 20px; }
   .testimonial-card p { font-size: 0.86rem; }
+
+  /* Home services: keep mobile typography and card density aligned with the sections above. */
+  .services .section-head {
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .services .section-head p {
+    max-width: 31em;
+    margin: 0;
+  }
+  .service-grid {
+    gap: 10px;
+    background: transparent;
+    border: 0;
+  }
+  .service-card {
+    min-height: 0;
+    padding: 18px 16px 16px;
+    border: 1px solid rgba(245, 242, 235, 0.12);
+    border-radius: 8px;
+  }
+  .service-card .idx {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+  }
+  .service-card h3 {
+    font-size: 1rem;
+    margin: 9px 0 6px;
+  }
+  .service-card p {
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+  .service-card .more {
+    margin-top: 12px;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+  }
 
   /* Services */
   body.mobile-compact-page .services-intro p {
