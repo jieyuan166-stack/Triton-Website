@@ -435,37 +435,38 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 .site-footer {
   background: var(--c-bg-deep);
   color: rgba(245, 242, 235, 0.6);
-  padding: 70px 0 28px;
+  padding: 92px 0 34px;
 }
 .footer-grid {
-  display: grid; grid-template-columns: 1.25fr 1.75fr 1fr 1.25fr; gap: 44px;
-  padding-bottom: 50px;
+  display: grid; grid-template-columns: 1.35fr 0.85fr 1.1fr 1.2fr; gap: 72px;
+  padding-bottom: 72px;
   border-bottom: 1px solid var(--c-line-soft);
 }
 .footer-grid h5 {
   color: var(--c-gold);
-  font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;
+  font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase;
   font-family: var(--f-sans-en);
-  margin-bottom: 22px; font-weight: 500;
+  margin-bottom: 28px; font-weight: 600;
 }
-.footer-grid ul li { margin-bottom: 12px; font-size: 0.92rem; }
+.footer-grid ul li { margin-bottom: 15px; font-size: 0.86rem; line-height: 1.65; }
 .footer-grid ul li a:hover { color: var(--c-gold); }
-.footer-grid .footer-brand .logo { margin-bottom: 20px; }
-.footer-grid .footer-brand p { font-size: 0.9rem; line-height: 1.8; }
+.footer-grid .footer-brand .logo { margin-bottom: 28px; }
+.footer-grid .footer-brand p { font-size: 0.86rem; line-height: 1.9; max-width: 280px; }
 .footer-nav ul {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px 24px;
+  display: block;
 }
 .footer-nav a { white-space: nowrap; }
 .footer-nav ul li,
-.footer-contact ul li {
-  margin-bottom: 0;
+.footer-contact ul li,
+.footer-hours ul li,
+.footer-hours-list li {
+  margin-bottom: 15px;
 }
 .footer-bottom {
-  padding-top: 28px;
+  padding-top: 30px;
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;
-  font-size: 0.82rem;
+  font-size: 0.76rem;
+  line-height: 1.7;
 }
 .footer-bottom a:hover { color: var(--c-gold); }
 
@@ -1747,31 +1748,33 @@ a.cia-row--featured:hover::before {
   .feature-grid { grid-template-columns: 1fr; }
   /* Footer: denser phone layout with shorter brand block and tighter lists. */
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 18px 20px;
-    padding-bottom: 20px;
+    display: block;
+    padding-bottom: 30px;
+  }
+  .footer-grid > div + div {
+    margin-top: 30px;
   }
   .footer-grid .footer-brand {
-    grid-column: 1 / -1;
-    padding-bottom: 4px;
+    padding-bottom: 28px;
     border-bottom: 1px solid var(--c-line-soft);
-    margin-bottom: 0;
   }
-  .footer-nav { grid-column: 1 / -1; }
-  .footer-nav ul {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px 14px;
+  .footer-grid .footer-brand + div {
+    margin-top: 32px;
   }
-  .footer-grid .footer-brand .logo { margin-bottom: 12px; }
-  .footer-grid .footer-brand .logo img { max-width: 128px; }
-  .footer-grid .footer-brand p { font-size: 0.66rem; line-height: 1.5; max-width: 34em; }
-  .footer-grid h5 { margin-bottom: 8px; font-size: 0.56rem; letter-spacing: 0.16em; }
-  .footer-grid ul li { margin-bottom: 0; font-size: 0.64rem; line-height: 1.48; }
+  .footer-grid .footer-brand .logo { margin-bottom: 16px; }
+  .footer-grid .footer-brand .logo img { max-width: 138px; }
+  .footer-grid .footer-brand p { font-size: 0.72rem; line-height: 1.7; max-width: 28em; }
+  .footer-grid h5 { margin-bottom: 14px; font-size: 0.58rem; letter-spacing: 0.2em; }
+  .footer-grid ul li { margin-bottom: 9px; font-size: 0.72rem; line-height: 1.55; }
   .footer-hours ul li,
-  .footer-hours-list li { gap: 10px; }
-  .site-footer { padding: 30px 0 16px; }
-  .footer-bottom { padding-top: 14px; gap: 6px; font-size: 0.62rem; line-height: 1.5; }
-  .footer-bottom div:last-child { display: flex; flex-wrap: wrap; gap: 6px 10px; }
+  .footer-hours-list li {
+    justify-content: flex-start;
+    gap: 18px;
+  }
+  .site-footer { padding: 48px 0 22px; }
+  .footer-bottom { padding-top: 20px; gap: 8px; font-size: 0.66rem; line-height: 1.65; }
+  .footer-bottom div:last-child,
+  .footer-bottom span:last-child { display: flex; flex-wrap: wrap; gap: 6px 10px; }
   .hero { padding: 130px 0 80px; min-height: auto; }
   .hero-stats { margin-top: 60px; }
 }
