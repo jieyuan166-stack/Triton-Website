@@ -265,6 +265,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 30px;
   padding-top: 40px;
+  padding-bottom: 18px;
   border-top: 1px solid var(--c-line-soft);
   max-width: 720px;
 }
@@ -285,7 +286,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 
 .scroll-cue {
   position: absolute;
-  bottom: 36px; left: 50%; transform: translateX(-50%);
+  bottom: 36px; right: 44px;
   color: rgba(245, 242, 235, 0.5);
   font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
   display: flex; flex-direction: column; align-items: center; gap: 10px;
