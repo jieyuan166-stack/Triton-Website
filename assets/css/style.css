@@ -1760,3 +1760,283 @@ a.cia-row--featured:hover::before {
   .hero { padding: 130px 0 80px; min-height: auto; }
   .hero-stats { margin-top: 60px; }
 }
+
+@media (max-width: 640px) {
+  body.mobile-compact-page .section { padding: 42px 0; }
+  body.mobile-compact-page .section-title {
+    font-size: 1.35rem;
+    margin-top: 8px;
+    padding-bottom: 10px;
+  }
+  body.mobile-compact-page .section-title .en {
+    font-size: 0.48em;
+    margin-top: 5px;
+    letter-spacing: 0.12em;
+  }
+  body.mobile-compact-page .eyebrow {
+    gap: 9px;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+  }
+  body.mobile-compact-page .eyebrow::before { width: 22px; }
+
+  body.mobile-compact-page .page-header {
+    padding: 118px 0 42px;
+    min-height: 0;
+  }
+  body.mobile-compact-page .page-header h1 {
+    font-size: 1.75rem;
+    margin: 12px 0 8px;
+    letter-spacing: 0.03em;
+  }
+  body.mobile-compact-page .page-header .en-title {
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+  }
+  body.mobile-compact-page .page-header .lead-text {
+    max-width: 31em;
+    font-size: 0.86rem;
+    line-height: 1.55;
+    margin-top: 10px;
+  }
+  body.mobile-compact-page .page-header .crumb {
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+
+  /* About */
+  body.mobile-compact-page .founders-grid {
+    gap: 18px;
+    margin-top: 24px;
+  }
+  body.mobile-compact-page .founder-card {
+    padding: 18px 16px 16px;
+    border-radius: 8px;
+  }
+  body.mobile-compact-page .founder-avatar {
+    aspect-ratio: 5 / 3;
+    margin: -18px -16px 16px;
+    width: calc(100% + 32px);
+  }
+  body.mobile-compact-page .founder-card h3 {
+    font-size: 1.12rem;
+    margin-bottom: 2px;
+  }
+  body.mobile-compact-page .founder-card .role {
+    font-size: 0.78rem;
+    margin-bottom: 12px;
+  }
+  body.mobile-compact-page .founder-card ul {
+    padding-top: 10px;
+  }
+  body.mobile-compact-page .founder-card ul li {
+    padding: 4px 0 4px 14px;
+    font-size: 0.78rem;
+    line-height: 1.42;
+    gap: 8px;
+  }
+  body.mobile-compact-page .founder-card ul li::before {
+    width: 4px;
+    height: 4px;
+  }
+  body.mobile-compact-page .founder-photo-badge {
+    top: 12px;
+    left: 14px;
+    transform: scale(0.78);
+    transform-origin: top left;
+  }
+  body.mobile-compact-page .intro p {
+    font-size: 0.88rem;
+    line-height: 1.62;
+    margin-bottom: 10px;
+  }
+  body.mobile-compact-page .feature-grid {
+    gap: 10px;
+    margin-top: 22px !important;
+  }
+  body.mobile-compact-page .feature-item {
+    padding: 16px 14px;
+    border-radius: 8px;
+  }
+  body.mobile-compact-page .feature-item .num { font-size: 0.68rem; margin-bottom: 8px; }
+  body.mobile-compact-page .feature-item h4 { font-size: 0.98rem; margin-bottom: 6px; }
+  body.mobile-compact-page .feature-item p { font-size: 0.78rem; line-height: 1.45; }
+
+  /* Services */
+  body.mobile-compact-page .services-intro p {
+    font-size: 0.88rem;
+    line-height: 1.58;
+    margin-bottom: 10px;
+  }
+  body.mobile-compact-page .services-intro .highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 18px;
+  }
+  body.mobile-compact-page .services-intro .highlights span {
+    padding: 9px 8px;
+    font-size: 0.76rem;
+    line-height: 1.35;
+  }
+  body.mobile-compact-page .service-detail {
+    padding: 18px 0;
+    border-bottom: 0;
+  }
+  body.mobile-compact-page .service-detail .inner {
+    gap: 8px;
+    padding: 18px 16px;
+    background: rgba(255,255,255,0.62);
+    border: 1px solid rgba(11,30,63,0.08);
+    border-radius: 8px;
+  }
+  body.mobile-compact-page .service-detail .side .num {
+    font-size: 1.45rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  body.mobile-compact-page .service-detail .side .num::before {
+    width: 24px;
+    margin-bottom: 0;
+  }
+  body.mobile-compact-page .service-detail h2 {
+    font-size: 1.12rem;
+    margin: 8px 0 4px;
+  }
+  body.mobile-compact-page .service-detail .en {
+    font-size: 0.72rem;
+    margin-bottom: 12px;
+    letter-spacing: 0.06em;
+  }
+  body.mobile-compact-page .service-detail .body p {
+    font-size: 0.82rem;
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+  body.mobile-compact-page .service-detail .body ul {
+    margin: 4px 0 8px;
+  }
+  body.mobile-compact-page .service-detail .body ul li {
+    padding: 4px 0 4px 15px;
+    font-size: 0.8rem;
+    line-height: 1.42;
+  }
+  body.mobile-compact-page .service-detail .body ul li::before {
+    top: 14px;
+    width: 7px;
+  }
+
+  /* Workshops */
+  body.mobile-compact-page .workshop-grid,
+  body.mobile-compact-page .workshop-grid[style] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 18px !important;
+  }
+  body.mobile-compact-page .workshop-card {
+    border-radius: 8px;
+  }
+  body.mobile-compact-page .workshop-thumb {
+    aspect-ratio: 4 / 3;
+  }
+  body.mobile-compact-page .workshop-thumb .ph-tag {
+    top: 8px;
+    left: 8px;
+    padding: 3px 7px;
+    font-size: 0.52rem;
+    letter-spacing: 0.12em;
+  }
+  body.mobile-compact-page .workshop-meta {
+    padding: 12px 10px 13px;
+  }
+  body.mobile-compact-page .workshop-meta .date {
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 5px;
+  }
+  body.mobile-compact-page .workshop-meta h3 {
+    font-size: 0.82rem;
+    line-height: 1.28;
+    margin-bottom: 0;
+  }
+  body.mobile-compact-page .workshop-meta p { display: none; }
+
+  /* Contact */
+  body.mobile-compact-page .contact-main-section { padding-top: 34px; }
+  body.mobile-compact-page .contact-two-col {
+    gap: 16px;
+  }
+  body.mobile-compact-page .contact-form-wrap,
+  body.mobile-compact-page .contact-info-aside {
+    padding: 22px 16px;
+    border-radius: 8px;
+  }
+  body.mobile-compact-page .contact-form-wrap .section-title {
+    margin-bottom: 8px !important;
+  }
+  body.mobile-compact-page .contact-form .form-field {
+    margin-bottom: 12px;
+  }
+  body.mobile-compact-page .contact-form label {
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 5px;
+  }
+  body.mobile-compact-page .contact-form input,
+  body.mobile-compact-page .contact-form select,
+  body.mobile-compact-page .contact-form textarea {
+    padding: 10px 12px;
+    font-size: 0.86rem;
+  }
+  body.mobile-compact-page .contact-form textarea {
+    min-height: 96px;
+  }
+  body.mobile-compact-page .cia-header {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+  body.mobile-compact-page .cia-header h3 {
+    font-size: 1.16rem;
+    white-space: normal;
+    margin: 8px 0;
+  }
+  body.mobile-compact-page .cia-header p {
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+  body.mobile-compact-page .cia-rows {
+    gap: 5px;
+    margin-bottom: 16px;
+  }
+  body.mobile-compact-page .cia-row,
+  body.mobile-compact-page .cia-row--featured {
+    gap: 10px;
+    padding: 11px 12px;
+    margin-bottom: 8px;
+  }
+  body.mobile-compact-page .cia-row--featured {
+    padding-right: 28px;
+  }
+  body.mobile-compact-page .cia-row--featured::after { width: 18px; }
+  body.mobile-compact-page .cia-row--featured::before { right: 5px; font-size: 1.2rem; }
+  body.mobile-compact-page .cia-lbl { font-size: 0.58rem; letter-spacing: 0.14em; }
+  body.mobile-compact-page .cia-val {
+    font-size: 0.8rem;
+    line-height: 1.42;
+  }
+  body.mobile-compact-page .cia-row--featured .cia-val { font-size: 0.82rem; line-height: 1.45; }
+  body.mobile-compact-page .wechat-card {
+    padding: 16px 14px 18px;
+    gap: 12px;
+  }
+  body.mobile-compact-page .wechat-card img {
+    width: min(56%, 150px);
+  }
+  body.mobile-compact-page .faq-section { padding-top: 36px; }
+  body.mobile-compact-page .faq-grid {
+    gap: 10px;
+  }
+  body.mobile-compact-page .faq-item {
+    padding: 16px 14px;
+  }
+}
