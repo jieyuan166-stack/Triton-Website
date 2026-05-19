@@ -333,45 +333,15 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   padding-top: 0;
 }
 
-/* Centered section header with the gold tag and main title on one line. */
+/* Header mirrors the site's standard eyebrow/title/English subtitle pattern. */
 .testimonial-head {
   max-width: 760px;
   margin: 0 auto 44px;
   text-align: center;
 }
-.testimonial-title-line {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-.testimonial-tag {
-  display: inline-block;
-  color: #C8A97E;
-  font-family: var(--f-sans-en);
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  margin-bottom: 0;
-}
 .testimonial-head .section-title {
-  color: #333;
-  font-size: clamp(2rem, 3.2vw, 2.45rem);
-  font-weight: 800;
-  line-height: 1.12;
+  color: var(--c-text);
   margin: 0;
-  padding-bottom: 0;
-}
-.testimonial-head .section-title::after {
-  display: none;
-}
-.testimonial-head p {
-  color: #666;
-  font-size: 0.98rem;
-  line-height: 1.75;
-  max-width: 62ch;
-  margin: 18px auto 0;
 }
 
 /* Carousel viewport: 3 cards desktop by default. */
