@@ -75,6 +75,16 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 /* ---------- Layout ---------- */
 .container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding-left: var(--pad-x); padding-right: var(--pad-x); }
 .section { padding: clamp(70px, 10vw, 120px) 0; }
+.section-note {
+  margin-top: 28px;
+  color: var(--c-muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+.section-note--center {
+  text-align: center;
+  margin-top: 40px;
+}
 
 .section.dark { background: var(--c-bg-deep); color: var(--c-cream); }
 .section.dark h1, .section.dark h2, .section.dark h3 { color: var(--c-cream); }
@@ -355,7 +365,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 /* Carousel viewport: 3 cards desktop by default. */
 .testimonial-rail {
   --testimonial-gap: 24px;
-  --testimonial-card-width: clamp(188px, 15vw, 240px);
+  --testimonial-card-width: clamp(280px, 22vw, 340px);
   overflow: hidden;
   padding: 8px 4px 20px;
   min-width: 0;
@@ -375,14 +385,14 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 /* Review card: white surface, 16px corners, and soft modern elevation. */
 .testimonial-card {
   width: var(--testimonial-card-width);
-  min-height: 360px;
+  min-height: 300px;
   flex: 0 0 var(--testimonial-card-width);
   display: flex;
   flex-direction: column;
   position: relative;
   background: #fff;
   border-radius: 16px;
-  padding: 28px;
+  padding: 24px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: transform .3s ease, box-shadow .3s ease;
 }
@@ -397,7 +407,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   font-family: var(--f-sans-en);
   font-size: 0.9rem;
   letter-spacing: 0.12em;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 /* Large light-gray quote mark as a visual anchor. */
@@ -406,16 +416,16 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   font-family: Georgia, serif;
   font-size: 4.6rem;
   line-height: 0.7;
-  height: 44px;
-  margin-bottom: 12px;
+  height: 36px;
+  margin-bottom: 8px;
 }
 
 /* Main review copy. */
 .testimonial-card p {
   color: #4a4a4a;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin: 0 0 24px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin: 0 0 18px;
 }
 
 /* User profile pinned to the bottom with flexbox. */
@@ -424,7 +434,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   align-items: center;
   gap: 12px;
   margin-top: auto;
-  padding-top: 18px;
+  padding-top: 14px;
   border-top: 1px solid rgba(11, 30, 63, 0.08);
 }
 .testimonial-profile img {
@@ -1860,7 +1870,7 @@ a.cia-row--featured:hover::before {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
-  .testimonial-rail { --testimonial-card-width: clamp(220px, 44vw, 300px); }
+  .testimonial-rail { --testimonial-card-width: clamp(240px, 48vw, 320px); }
 }
 
 @media (max-width: 1024px) {
@@ -1974,6 +1984,12 @@ a.cia-row--featured:hover::before {
   .services .section-head p {
     font-size: 0.86rem;
     line-height: 1.6;
+  }
+  .section-note,
+  .section-note--center {
+    margin-top: 18px;
+    font-size: 0.72rem;
+    line-height: 1.55;
   }
   .page-header {
     padding: 118px 0 42px;
@@ -2155,7 +2171,7 @@ a.cia-row--featured:hover::before {
   .testimonial-grid { gap: 24px; }
   .testimonial-rail { --testimonial-gap: 14px; --testimonial-card-width: calc(100vw - (var(--pad-x) * 2)); }
   .testimonial-track { animation-duration: 72s; }
-  .testimonial-card { min-height: 340px; padding: 22px 20px; }
+  .testimonial-card { min-height: 320px; padding: 22px 20px; }
   .testimonial-card p { font-size: 0.86rem; }
 
   /* Home services: keep mobile typography and card density aligned with the sections above. */
