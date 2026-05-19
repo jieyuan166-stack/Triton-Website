@@ -2182,6 +2182,22 @@ a.cia-row--featured:hover::before {
   .testimonial-card { min-height: 320px; padding: 22px 20px; }
   .testimonial-card p { font-size: 0.86rem; }
 
+  .marquee {
+    padding: 10px 0;
+  }
+  .marquee-track {
+    gap: 34px;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+  }
+  .marquee-track span {
+    gap: 28px;
+  }
+  .marquee-track .dot {
+    width: 4px;
+    height: 4px;
+  }
+
   /* Home services: keep mobile typography and card density aligned with the sections above. */
   .services .section-head {
     gap: 14px;
@@ -2269,14 +2285,9 @@ a.cia-row--featured:hover::before {
     margin: 8px 0 4px;
   }
   body.mobile-compact-page .service-detail .en {
-    display: inline-block;
-    font-size: 0.58rem;
-    line-height: 1.2;
-    margin-bottom: 8px;
-    padding: 4px 8px;
-    letter-spacing: 0.04em;
-    background: rgba(11, 30, 63, 0.06);
-    border-radius: 999px;
+    font-size: 0.72rem;
+    margin-bottom: 12px;
+    letter-spacing: 0.06em;
   }
   body.mobile-compact-page .service-detail .body p {
     font-size: 0.82rem;
