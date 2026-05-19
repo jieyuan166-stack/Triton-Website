@@ -284,23 +284,6 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   letter-spacing: 0.08em;
 }
 
-.scroll-cue {
-  position: absolute;
-  bottom: 36px; right: 44px;
-  color: rgba(245, 242, 235, 0.5);
-  font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
-  display: flex; flex-direction: column; align-items: center; gap: 10px;
-}
-.scroll-cue::after {
-  content: ""; width: 1px; height: 60px;
-  background: linear-gradient(180deg, var(--c-gold), transparent);
-  animation: scrollPulse 3.6s ease-in-out infinite;
-}
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; transform: scaleY(0.9); transform-origin: top; }
-  50% { opacity: 1; transform: scaleY(1); }
-}
-
 /* ---------- Intro section ---------- */
 .intro { background: var(--c-cream); }
 .intro-grid {
@@ -737,9 +720,6 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent; color: transparent;
 }
-
-/* ---------- Scroll cue ---------- */
-.scroll-cue { z-index: 3; }
 
 /* ---------- Section title underline draw ---------- */
 .section-title { position: relative; display: inline-block; padding-bottom: 16px; }
