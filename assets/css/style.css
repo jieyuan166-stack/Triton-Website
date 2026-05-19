@@ -1922,6 +1922,58 @@ a.cia-row--featured:hover::before {
 }
 
 @media (max-width: 640px) {
+  body.home-page .intro {
+    padding: 42px 0 34px;
+  }
+  body.home-page .intro-grid {
+    gap: 20px;
+  }
+  body.home-page .intro .eyebrow {
+    gap: 9px;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+  }
+  body.home-page .intro .eyebrow::before {
+    width: 22px;
+  }
+  body.home-page .intro .section-title {
+    font-size: 1.36rem;
+    margin-top: 8px;
+    padding-bottom: 10px;
+  }
+  body.home-page .intro .section-title .en {
+    font-size: 0.48em;
+    margin-top: 5px;
+    letter-spacing: 0.12em;
+  }
+  body.home-page .intro-grid .lead p {
+    font-size: 0.84rem;
+    line-height: 1.58;
+    margin-bottom: 10px;
+  }
+  body.home-page .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    margin-top: 18px !important;
+  }
+  body.home-page .feature-item {
+    padding: 14px 12px;
+    min-height: 0;
+  }
+  body.home-page .feature-item .num {
+    font-size: 0.78rem;
+  }
+  body.home-page .feature-item h4 {
+    font-size: 0.86rem;
+    margin: 6px 0 4px;
+  }
+  body.home-page .feature-item p {
+    font-size: 0.7rem;
+    line-height: 1.38;
+  }
+}
+
+@media (max-width: 640px) {
   body.mobile-compact-page .section { padding: 42px 0; }
   body.mobile-compact-page .section-title {
     font-size: 1.35rem;
