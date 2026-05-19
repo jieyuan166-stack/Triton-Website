@@ -1107,10 +1107,17 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   .logo-cell:nth-child(3n)::after { display: none; }
 }
 @media (max-width: 600px) {
-  .logo-grid { grid-template-columns: repeat(2, 1fr); }
-  .logo-cell:nth-child(3n)::after { display: block; }
-  .logo-cell:nth-child(2n)::after { display: none; }
-  .logo-cell { aspect-ratio: 4 / 3; padding: 22px; }
+  /* Tighter 3-col grid on mobile so the section doesn't dominate the page */
+  .logo-grid { grid-template-columns: repeat(3, 1fr); }
+  .logo-cell:nth-child(3n)::after { display: none; }
+  .logo-cell:nth-child(5n)::after { display: block; }
+  .logo-cell { aspect-ratio: 1 / 1; padding: 14px; }
+  .logo-cell img { max-height: 42px; }
+  .logo-grid.cols-3 .logo-cell { aspect-ratio: 1 / 1; }
+  .partner-block { padding: 50px 0 !important; }
+  .partner-block h2 { font-size: 1.2rem !important; padding-bottom: 14px !important; }
+  .partner-block h2::after { width: 36px !important; }
+  .partner-block .en-sub { font-size: 0.85rem; margin-bottom: 30px; }
 }
 
 /* ---------- Workshops ---------- */
@@ -1723,7 +1730,21 @@ a.cia-row--featured:hover::before {
   .services .section-head { grid-template-columns: 1fr; }
   .service-grid { grid-template-columns: 1fr; }
   .feature-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+  /* Footer: keep 2 cols on mobile (much shorter than stacking 4), brand spans top */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 24px;
+    padding-bottom: 36px;
+  }
+  .footer-grid .footer-brand {
+    grid-column: 1 / -1;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--c-line-soft);
+    margin-bottom: 8px;
+  }
+  .footer-grid h5 { margin-bottom: 14px; font-size: 0.72rem; }
+  .footer-grid ul li { margin-bottom: 8px; font-size: 0.86rem; line-height: 1.55; }
+  .site-footer { padding: 50px 0 24px; }
   .hero { padding: 130px 0 80px; min-height: auto; }
   .hero-stats { margin-top: 60px; }
 }
