@@ -452,6 +452,15 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 .footer-grid ul li a:hover { color: var(--c-gold); }
 .footer-grid .footer-brand .logo { margin-bottom: 20px; }
 .footer-grid .footer-brand p { font-size: 0.9rem; line-height: 1.8; }
+.footer-nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px 18px;
+}
+.footer-nav ul li,
+.footer-contact ul li {
+  margin-bottom: 0;
+}
 .footer-bottom {
   padding-top: 28px;
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;
@@ -1738,24 +1747,29 @@ a.cia-row--featured:hover::before {
   /* Footer: denser phone layout with shorter brand block and tighter lists. */
   .footer-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 20px 18px;
-    padding-bottom: 24px;
+    gap: 16px 18px;
+    padding-bottom: 18px;
   }
   .footer-grid .footer-brand {
     grid-column: 1 / -1;
-    padding-bottom: 6px;
+    padding-bottom: 4px;
     border-bottom: 1px solid var(--c-line-soft);
-    margin-bottom: 2px;
+    margin-bottom: 0;
+  }
+  .footer-nav { grid-column: 1 / -1; }
+  .footer-nav ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px 8px;
   }
   .footer-grid .footer-brand .logo { margin-bottom: 10px; }
   .footer-grid .footer-brand .logo img { max-width: 138px; }
-  .footer-grid .footer-brand p { font-size: 0.78rem; line-height: 1.55; max-width: 34em; }
-  .footer-grid h5 { margin-bottom: 9px; font-size: 0.66rem; letter-spacing: 0.16em; }
-  .footer-grid ul li { margin-bottom: 5px; font-size: 0.78rem; line-height: 1.35; }
+  .footer-grid .footer-brand p { font-size: 0.72rem; line-height: 1.38; max-width: 34em; }
+  .footer-grid h5 { margin-bottom: 7px; font-size: 0.62rem; letter-spacing: 0.14em; }
+  .footer-grid ul li { margin-bottom: 0; font-size: 0.72rem; line-height: 1.28; }
   .footer-hours ul li,
   .footer-hours-list li { gap: 8px; }
-  .site-footer { padding: 34px 0 18px; }
-  .footer-bottom { padding-top: 16px; gap: 6px; font-size: 0.72rem; line-height: 1.45; }
+  .site-footer { padding: 26px 0 14px; }
+  .footer-bottom { padding-top: 12px; gap: 5px; font-size: 0.68rem; line-height: 1.35; }
   .footer-bottom div:last-child { display: flex; flex-wrap: wrap; gap: 6px 10px; }
   .hero { padding: 130px 0 80px; min-height: auto; }
   .hero-stats { margin-top: 60px; }
@@ -2033,10 +2047,26 @@ a.cia-row--featured:hover::before {
     width: min(56%, 150px);
   }
   body.mobile-compact-page .faq-section { padding-top: 36px; }
+  body.mobile-compact-page .faq-head .section-title {
+    margin-bottom: 18px !important;
+  }
   body.mobile-compact-page .faq-grid {
     gap: 10px;
   }
   body.mobile-compact-page .faq-item {
-    padding: 16px 14px;
+    padding: 0;
+  }
+  body.mobile-compact-page .faq-item summary {
+    padding: 13px 0;
+    font-size: 0.9rem;
+    line-height: 1.35;
+  }
+  body.mobile-compact-page .faq-item p {
+    padding-bottom: 13px;
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+  body.mobile-compact-page .faq-mark {
+    font-size: 1.05rem;
   }
 }
