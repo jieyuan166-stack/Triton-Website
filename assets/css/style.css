@@ -1968,7 +1968,7 @@ a.cia-row--featured:hover::before {
   .section-title .en,
   body.home-page .section-title .en,
   body.mobile-compact-page .section-title .en {
-    font-size: 0.48em;
+    font-size: 0.54em;
     line-height: 1.35;
     margin-top: 5px;
     letter-spacing: 0.12em;
@@ -1990,7 +1990,7 @@ a.cia-row--featured:hover::before {
   body.home-page .intro-grid .lead p,
   body.mobile-compact-page .intro p,
   .services .section-head p {
-    font-size: 0.86rem;
+    font-size: 0.92rem;
     line-height: 1.6;
   }
   .section-note,
@@ -2010,13 +2010,13 @@ a.cia-row--featured:hover::before {
     letter-spacing: 0.03em;
   }
   .page-header .en-title {
-    font-size: 0.82rem;
+    font-size: 0.88rem;
     line-height: 1.35;
     letter-spacing: 0.12em;
   }
   .page-header .lead-text {
     max-width: 31em;
-    font-size: 0.86rem;
+    font-size: 0.92rem;
     line-height: 1.55;
     margin-top: 10px;
   }
@@ -2044,12 +2044,12 @@ a.cia-row--featured:hover::before {
     padding-bottom: 10px;
   }
   body.home-page .intro .section-title .en {
-    font-size: 0.48em;
+    font-size: 0.54em;
     margin-top: 5px;
     letter-spacing: 0.12em;
   }
   body.home-page .intro-grid .lead p {
-    font-size: 0.84rem;
+    font-size: 0.92rem;
     line-height: 1.58;
     margin-bottom: 10px;
   }
@@ -2083,7 +2083,7 @@ a.cia-row--featured:hover::before {
     padding-bottom: 10px;
   }
   body.mobile-compact-page .section-title .en {
-    font-size: 0.48em;
+    font-size: 0.54em;
     margin-top: 5px;
     letter-spacing: 0.12em;
   }
@@ -2104,12 +2104,12 @@ a.cia-row--featured:hover::before {
     letter-spacing: 0.03em;
   }
   body.mobile-compact-page .page-header .en-title {
-    font-size: 0.82rem;
+    font-size: 0.88rem;
     letter-spacing: 0.12em;
   }
   body.mobile-compact-page .page-header .lead-text {
     max-width: 31em;
-    font-size: 0.86rem;
+    font-size: 0.92rem;
     line-height: 1.55;
     margin-top: 10px;
   }
@@ -2145,7 +2145,7 @@ a.cia-row--featured:hover::before {
   }
   body.mobile-compact-page .founder-card ul li {
     padding: 4px 0 4px 14px;
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     line-height: 1.42;
     gap: 8px;
   }
@@ -2160,7 +2160,7 @@ a.cia-row--featured:hover::before {
     transform-origin: top left;
   }
   body.mobile-compact-page .intro p {
-    font-size: 0.88rem;
+    font-size: 0.94rem;
     line-height: 1.62;
     margin-bottom: 10px;
   }
@@ -2174,13 +2174,13 @@ a.cia-row--featured:hover::before {
   }
   body.mobile-compact-page .feature-item .num { font-size: 0.68rem; margin-bottom: 8px; }
   body.mobile-compact-page .feature-item h4 { font-size: 0.98rem; margin-bottom: 6px; }
-  body.mobile-compact-page .feature-item p { font-size: 0.78rem; line-height: 1.45; }
+  body.mobile-compact-page .feature-item p { font-size: 0.84rem; line-height: 1.45; }
   .testimonial-section { padding-top: 0; }
   .testimonial-grid { gap: 24px; }
   .testimonial-rail { --testimonial-gap: 14px; --testimonial-card-width: calc(100vw - (var(--pad-x) * 2)); }
   .testimonial-track { animation-duration: 72s; }
   .testimonial-card { min-height: 320px; padding: 22px 20px; }
-  .testimonial-card p { font-size: 0.86rem; }
+  .testimonial-card p { font-size: 0.92rem; }
 
   .marquee {
     padding: 10px 0;
@@ -2216,7 +2216,7 @@ a.cia-row--featured:hover::before {
     margin-bottom: 8px;
   }
   .cta-inner p {
-    font-size: 0.82rem;
+    font-size: 0.88rem;
     line-height: 1.55;
   }
   .cta-inner .btn {
@@ -2255,7 +2255,7 @@ a.cia-row--featured:hover::before {
     margin: 9px 0 6px;
   }
   .service-card p {
-    font-size: 0.78rem;
+    font-size: 0.84rem;
     line-height: 1.5;
   }
   .service-card .more {
@@ -2266,7 +2266,7 @@ a.cia-row--featured:hover::before {
 
   /* Services */
   body.mobile-compact-page .services-intro p {
-    font-size: 0.88rem;
+    font-size: 0.94rem;
     line-height: 1.58;
     margin-bottom: 10px;
   }
@@ -2318,7 +2318,7 @@ a.cia-row--featured:hover::before {
     letter-spacing: 0.06em;
   }
   body.mobile-compact-page .service-detail .body p {
-    font-size: 0.82rem;
+    font-size: 0.88rem;
     line-height: 1.55;
     margin-bottom: 8px;
   }
@@ -2327,7 +2327,7 @@ a.cia-row--featured:hover::before {
   }
   body.mobile-compact-page .service-detail .body ul li {
     padding: 4px 0 4px 15px;
-    font-size: 0.8rem;
+    font-size: 0.86rem;
     line-height: 1.42;
   }
   body.mobile-compact-page .service-detail .body ul li::before {
@@ -2395,7 +2395,7 @@ a.cia-row--featured:hover::before {
   body.mobile-compact-page .contact-form select,
   body.mobile-compact-page .contact-form textarea {
     padding: 10px 12px;
-    font-size: 0.86rem;
+    font-size: 0.92rem;
   }
   body.mobile-compact-page .contact-form textarea {
     min-height: 96px;
@@ -2410,7 +2410,7 @@ a.cia-row--featured:hover::before {
     margin: 8px 0;
   }
   body.mobile-compact-page .cia-header p {
-    font-size: 0.78rem;
+    font-size: 0.84rem;
     line-height: 1.5;
   }
   body.mobile-compact-page .cia-rows {
@@ -2430,10 +2430,10 @@ a.cia-row--featured:hover::before {
   body.mobile-compact-page .cia-row--featured::before { right: 5px; font-size: 1.2rem; }
   body.mobile-compact-page .cia-lbl { font-size: 0.58rem; letter-spacing: 0.14em; }
   body.mobile-compact-page .cia-val {
-    font-size: 0.8rem;
+    font-size: 0.86rem;
     line-height: 1.42;
   }
-  body.mobile-compact-page .cia-row--featured .cia-val { font-size: 0.82rem; line-height: 1.45; }
+  body.mobile-compact-page .cia-row--featured .cia-val { font-size: 0.88rem; line-height: 1.45; }
   body.mobile-compact-page .wechat-card {
     padding: 16px 14px 18px;
     gap: 12px;
@@ -2458,7 +2458,7 @@ a.cia-row--featured:hover::before {
   }
   body.mobile-compact-page .faq-item p {
     padding-bottom: 13px;
-    font-size: 0.78rem;
+    font-size: 0.84rem;
     line-height: 1.55;
   }
   body.mobile-compact-page .faq-mark {
