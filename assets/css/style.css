@@ -391,12 +391,15 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   position: relative;
 }
 .cta-inner {
-  display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: center;
   background: var(--c-bg-deep);
   color: var(--c-cream);
-  padding: clamp(40px, 6vw, 70px);
+  padding: clamp(32px, 5vw, 52px);
   border-radius: var(--radius);
   position: relative; overflow: hidden;
+}
+.cta-inner > div {
+  position: relative; z-index: 2;
+  max-width: 760px;
 }
 .cta-inner::before {
   content: ""; position: absolute; inset: 0;
@@ -412,33 +415,6 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   color: rgba(245, 242, 235, 0.75);
   margin-bottom: 0;
 }
-.cta-contact {
-  position: relative; z-index: 2;
-  display: flex; flex-direction: column; gap: 18px;
-}
-.cta-contact .row {
-  display: flex; gap: 14px; align-items: center;
-  padding: 16px 20px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--c-line-soft);
-  border-radius: var(--radius);
-  transition: all .3s ease;
-}
-.cta-contact .row:hover { background: rgba(201, 169, 97, 0.08); border-color: var(--c-line); }
-.cta-contact .icon {
-  width: 36px; height: 36px;
-  display: grid; place-items: center;
-  border: 1px solid var(--c-gold);
-  border-radius: 50%;
-  color: var(--c-gold);
-  flex-shrink: 0;
-}
-.cta-contact .label {
-  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: rgba(245, 242, 235, 0.5); display: block;
-}
-.cta-contact .val { font-size: 0.98rem; color: var(--c-cream); }
-
 /* ---------- Footer ---------- */
 .site-footer {
   background: var(--c-bg-deep);
@@ -1715,7 +1691,7 @@ a.cia-row--featured:hover::before {
 @media (max-width: 1024px) {
   .service-grid { grid-template-columns: repeat(2, 1fr); }
   .intro-grid { grid-template-columns: 1fr; gap: 50px; }
-  .cta-inner { grid-template-columns: 1fr; gap: 36px; }
+  .cta-inner { padding: 30px 24px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
   .founders-grid { grid-template-columns: 1fr; }
   .service-detail .inner { grid-template-columns: 1fr; gap: 30px; }
