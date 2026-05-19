@@ -2198,6 +2198,34 @@ a.cia-row--featured:hover::before {
     height: 4px;
   }
 
+  .cta-inner {
+    padding: 22px 18px;
+    border-radius: 8px;
+  }
+  .cta-inner .eyebrow {
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 8px;
+  }
+  .cta-inner .eyebrow::before {
+    width: 20px;
+  }
+  .cta-inner h2 {
+    font-size: 1.28rem;
+    line-height: 1.28;
+    margin-bottom: 8px;
+  }
+  .cta-inner p {
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+  .cta-inner .btn {
+    margin-top: 18px !important;
+    padding: 11px 18px;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+  }
+
   /* Home services: keep mobile typography and card density aligned with the sections above. */
   .services .section-head {
     gap: 14px;
