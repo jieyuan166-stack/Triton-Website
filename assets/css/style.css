@@ -326,38 +326,52 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 }
 
 /* ---------- Testimonials ---------- */
-/* Section shell: soft cream background and hidden overflow for the marquee. */
+/* Section shell: warm premium background and hidden overflow for the marquee. */
 .testimonial-section {
-  background: linear-gradient(180deg, var(--c-cream) 0%, var(--c-cream-2) 100%);
+  background: #F9F8F6;
   overflow: hidden;
   padding-top: 0;
 }
 
-/* Centered section header matching the requested tag/title hierarchy. */
+/* Centered section header with the gold tag and main title on one line. */
 .testimonial-head {
   max-width: 760px;
   margin: 0 auto 44px;
   text-align: center;
 }
+.testimonial-title-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
 .testimonial-tag {
   display: inline-block;
-  color: var(--c-gold);
+  color: #C8A97E;
   font-family: var(--f-sans-en);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 0;
 }
 .testimonial-head .section-title {
-  margin-top: 0;
+  color: #333;
+  font-size: clamp(2rem, 3.2vw, 2.45rem);
+  font-weight: 800;
+  line-height: 1.12;
+  margin: 0;
+  padding-bottom: 0;
+}
+.testimonial-head .section-title::after {
+  display: none;
 }
 .testimonial-head p {
-  color: var(--c-text-soft);
+  color: #666;
   font-size: 0.98rem;
   line-height: 1.75;
   max-width: 62ch;
-  margin: 14px auto 0;
+  margin: 18px auto 0;
 }
 
 /* Carousel viewport: 3 cards desktop by default. */
@@ -391,12 +405,12 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   background: #fff;
   border-radius: 16px;
   padding: 28px;
-  box-shadow: 0 12px 34px rgba(11, 30, 63, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: transform .3s ease, box-shadow .3s ease;
 }
 .testimonial-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 48px rgba(11, 30, 63, 0.14);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.1);
 }
 
 /* Gold star row, aligned left. */
