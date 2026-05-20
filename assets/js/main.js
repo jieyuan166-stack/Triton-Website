@@ -92,11 +92,11 @@
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e, i) => {
         if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('in'), i * 140);
+          setTimeout(() => e.target.classList.add('in'), i * 80);
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     revealTargets.forEach(el => io.observe(el));
   } else {
     revealTargets.forEach(el => el.classList.add('in'));
