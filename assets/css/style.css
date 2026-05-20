@@ -262,12 +262,12 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 .hero-actions { display: flex; gap: 18px; flex-wrap: wrap; }
 .hero-stats {
   margin-top: 80px;
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 30px;
   padding-top: 40px;
   padding-bottom: 18px;
   border-top: 1px solid var(--c-line-soft);
-  max-width: 720px;
+  max-width: 920px;
 }
 .hero-stats .stat .num .plus { font-size: 0.5em; color: var(--c-cream); margin-left: 2px; }
 @media (max-width: 640px) { .hero-stats { grid-template-columns: 1fr 1fr; } }
@@ -2317,7 +2317,7 @@ a.cia-row--featured:hover::before {
   .testimonial-card p { font-size: 0.92rem; }
 
   .market-ticker-track {
-    animation-duration: 54s;
+    animation-duration: 28s;
   }
   .ticker-item {
     padding: 9px 18px;
