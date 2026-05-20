@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+  <title id="title">陈先生头像</title>
+  <rect width="160" height="160" rx="80" fill="#efe7db"/>
+  <circle cx="80" cy="74" r="41" fill="#eec097"/>
+  <path d="M36 150c8-29 26-45 44-45s36 16 44 45" fill="#263d5c"/>
+  <path d="M58 107h44l-6 23H64z" fill="#e7b68e"/>
+  <path d="M42 68c3-27 19-42 42-42 19 0 32 10 37 31-16-1-34-7-49-20-7 14-17 24-30 31z" fill="#181512"/>
+  <rect x="54" y="66" width="22" height="12" rx="6" fill="none" stroke="#5b5147" stroke-width="3"/>
+  <rect x="84" y="66" width="22" height="12" rx="6" fill="none" stroke="#5b5147" stroke-width="3"/>
+  <path d="M76 72h8" stroke="#5b5147" stroke-width="3"/>
+  <path d="M64 87c9 7 23 7 32 0" fill="none" stroke="#9b5f4c" stroke-width="4" stroke-linecap="round"/>
+</svg>

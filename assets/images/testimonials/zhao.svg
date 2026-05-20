@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+  <title id="title">赵总头像</title>
+  <rect width="160" height="160" rx="80" fill="#eee6d6"/>
+  <path d="M30 149c8-28 26-44 50-44s42 16 50 44" fill="#10233c"/>
+  <path d="M58 107h44l-5 23H63z" fill="#e8b78f"/>
+  <circle cx="80" cy="73" r="41" fill="#f0c39b"/>
+  <path d="M40 71c3-29 20-46 44-46 22 0 37 14 40 39-22 0-41-7-57-22-6 13-15 22-27 29z" fill="#16110f"/>
+  <path d="M58 84c10 9 34 9 44 0" fill="none" stroke="#9b5f4c" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="66" cy="69" r="4" fill="#241b19"/>
+  <circle cx="94" cy="69" r="4" fill="#241b19"/>
+  <path d="M53 116l27 18 27-18" fill="#fff" opacity=".9"/>
+</svg>

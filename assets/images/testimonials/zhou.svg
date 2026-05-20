@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+  <title id="title">周教授头像</title>
+  <rect width="160" height="160" rx="80" fill="#f3eadc"/>
+  <path d="M31 150c8-30 27-46 49-46s41 16 49 46" fill="#1b2f4d"/>
+  <path d="M59 106h42l-6 24H65z" fill="#e7b58d"/>
+  <circle cx="80" cy="73" r="40" fill="#efc09a"/>
+  <path d="M42 67c5-28 21-42 42-42 18 0 31 10 36 31-18 1-34-4-48-16-6 13-16 22-30 27z" fill="#1d1a18"/>
+  <path d="M46 58c12-11 27-16 45-15" stroke="#d8d0c4" stroke-width="8" stroke-linecap="round"/>
+  <rect x="54" y="66" width="22" height="12" rx="6" fill="none" stroke="#4d4741" stroke-width="3"/>
+  <rect x="84" y="66" width="22" height="12" rx="6" fill="none" stroke="#4d4741" stroke-width="3"/>
+  <path d="M62 86c9 8 27 8 36 0" fill="none" stroke="#995f4e" stroke-width="4" stroke-linecap="round"/>
+</svg>

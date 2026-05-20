@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+  <title id="title">林女士头像</title>
+  <rect width="160" height="160" rx="80" fill="#f6ecdd"/>
+  <path d="M30 150c8-30 28-46 50-46s42 16 50 46" fill="#26354f"/>
+  <path d="M58 107h44l-7 24H65z" fill="#efc29a"/>
+  <circle cx="80" cy="73" r="39" fill="#f4c8a2"/>
+  <path d="M38 85c-2-39 15-60 43-60 27 0 44 21 42 60-18-4-33-17-43-34-8 16-21 28-42 34z" fill="#15110f"/>
+  <path d="M49 64c-8 16-8 38 1 56" fill="none" stroke="#15110f" stroke-width="13" stroke-linecap="round"/>
+  <path d="M111 64c8 16 8 38-1 56" fill="none" stroke="#15110f" stroke-width="13" stroke-linecap="round"/>
+  <path d="M63 84c8 8 26 8 34 0" fill="none" stroke="#a56352" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="66" cy="69" r="4" fill="#2a2020"/>
+  <circle cx="94" cy="69" r="4" fill="#2a2020"/>
+</svg>
