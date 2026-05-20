@@ -11,6 +11,23 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  // --- Mobile hero video: retry autoplay when the browser delays it ---
+  const heroVideo = document.querySelector('.hero-bg-video');
+  if (heroVideo) {
+    const playHeroVideo = () => {
+      heroVideo.muted = true;
+      heroVideo.playsInline = true;
+      const attempt = heroVideo.play();
+      if (attempt && typeof attempt.catch === 'function') attempt.catch(() => {});
+    };
+    heroVideo.addEventListener('canplay', playHeroVideo, { once: true });
+    window.addEventListener('load', playHeroVideo, { once: true });
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) playHeroVideo();
+    });
+    document.addEventListener('touchstart', playHeroVideo, { once: true, passive: true });
+  }
+
   // --- Mobile menu ---
   const toggle = document.getElementById('navToggle');
   const navList = document.getElementById('navList');
