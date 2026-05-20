@@ -85,6 +85,110 @@
     revealTargets.forEach(el => el.classList.add('in'));
   }
 
+  // --- Homepage service modal ---
+  const serviceDetails = {
+    mortgage: {
+      eyebrow: 'Mortgage Management',
+      title: '房贷与现金流管理',
+      intro: '把房贷、家庭现金流与保障额度放在同一张图里看，避免单独追求低月供而忽略长期风险。',
+      points: [
+        '评估家庭收入、负债、紧急备用金和保费预算的平衡点。',
+        '协助规划还款节奏、贷款保护和家庭主要收入来源的风险覆盖。',
+        '根据人生阶段调整现金流安排，让保障和资产积累彼此配合。'
+      ]
+    },
+    tax: {
+      eyebrow: 'Tax Control',
+      title: '税务控制策略',
+      intro: '通过账户选择、保险工具和企业结构安排，减少财富积累与传承过程中的税务摩擦。',
+      points: [
+        '比较 TFSA、RRSP、RESP、非注册账户与保险型资产的使用顺序。',
+        '为企业主评估公司留存资金、股东保障与税务效率。',
+        '配合专业合作人士处理更复杂的税务和信托架构问题。'
+      ]
+    },
+    asset: {
+      eyebrow: 'Asset Appreciation',
+      title: '资产增值规划',
+      intro: '围绕风险承受度、时间周期和流动性需求，建立可持续调整的长期资产配置。',
+      points: [
+        '梳理家庭资产、负债、现金流和既有投资组合。',
+        '选择适合不同账户属性的投资与保险解决方案。',
+        '定期检视组合变化，避免规划和现实资产状态脱节。'
+      ]
+    },
+    retirement: {
+      eyebrow: 'Retirement Planning',
+      title: '退休养老规划',
+      intro: '提前规划退休收入来源、提款顺序、医疗风险与遗产安排，让退休生活更从容。',
+      points: [
+        '估算退休现金流缺口和不同账户的提款优先级。',
+        '评估分红式保险、IRP 等方案在退休收入中的作用。',
+        '兼顾配偶保障、长期护理风险与下一代资产安排。'
+      ]
+    },
+    estate: {
+      eyebrow: 'Estate Succession',
+      title: '财富传承规划',
+      intro: '让资产传承不只是“留给谁”，也包括如何更有效、更清楚、更少争议地完成交接。',
+      points: [
+        '梳理受益人、保单、公司资产和家庭成员责任。',
+        '评估人寿保险在遗产税务和资产流动性中的作用。',
+        '与法律、税务合作机构配合，形成更完整的传承方案。'
+      ]
+    },
+    corporate: {
+      eyebrow: 'Corporate Strategy',
+      title: '企业策略规划',
+      intro: '为企业主处理关键人风险、股东协议、公司资金效率和未来退出安排。',
+      points: [
+        '评估关键人保险、买卖协议资金来源和股东保障。',
+        '分析公司留存资金如何配合保险和投资工具长期使用。',
+        '为企业传承、退休退出和家庭资产保护建立清晰路线。'
+      ]
+    }
+  };
+
+  const serviceModal = document.getElementById('serviceModal');
+  const serviceTitle = document.getElementById('serviceModalTitle');
+  const serviceEyebrow = document.getElementById('serviceModalEyebrow');
+  const serviceIntro = document.getElementById('serviceModalIntro');
+  const serviceList = document.getElementById('serviceModalList');
+  const serviceTriggers = document.querySelectorAll('[data-service-id]');
+  const closeServiceModal = () => {
+    if (!serviceModal) return;
+    serviceModal.classList.remove('is-open');
+    serviceModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+  };
+  const openServiceModal = (id) => {
+    const data = serviceDetails[id];
+    if (!serviceModal || !data) return;
+    serviceEyebrow.textContent = data.eyebrow;
+    serviceTitle.textContent = data.title;
+    serviceIntro.textContent = data.intro;
+    serviceList.innerHTML = data.points.map(point => `<li>${point}</li>`).join('');
+    serviceModal.classList.add('is-open');
+    serviceModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    const closeButton = serviceModal.querySelector('.service-modal__close');
+    if (closeButton) closeButton.focus({ preventScroll: true });
+  };
+  serviceTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (event) => {
+      const interactive = event.target.closest('button, a');
+      if (!interactive) return;
+      event.preventDefault();
+      openServiceModal(trigger.dataset.serviceId);
+    });
+  });
+  document.querySelectorAll('[data-service-close]').forEach(el => {
+    el.addEventListener('click', closeServiceModal);
+  });
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeServiceModal();
+  });
+
   // --- Animated number counter (slow & dignified) ---
   const counters = document.querySelectorAll('[data-count]');
   const animateCount = (el) => {

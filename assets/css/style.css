@@ -459,7 +459,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   color: rgba(245, 242, 235, 0.7); max-width: 520px;
 }
 .service-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
   background: var(--c-line-soft);
   border: 1px solid var(--c-line-soft);
 }
@@ -504,6 +504,10 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   text-transform: uppercase;
   font-family: var(--f-sans-en);
   display: inline-flex; gap: 8px; align-items: center;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
 }
 .service-card:hover .more .arrow { transform: translateX(4px); }
 .service-card .more .arrow { transition: transform .3s ease; }
@@ -732,28 +736,151 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 .section-head.in .section-title::after,
 .reveal.in .section-title::after { transform: scaleX(1); }
 
-/* ---------- Marquee strip ---------- */
-.marquee {
-  background: var(--c-bg-dark);
-  color: rgba(245,242,235,0.4);
-  padding: 22px 0;
+/* ---------- Financial ticker ---------- */
+.market-ticker {
+  background: #07111f;
+  color: rgba(245, 242, 235, 0.72);
   overflow: hidden;
-  border-top: 1px solid var(--c-line-soft);
-  border-bottom: 1px solid var(--c-line-soft);
+  border-top: 1px solid rgba(201, 169, 97, 0.2);
+  border-bottom: 1px solid rgba(201, 169, 97, 0.14);
 }
-.marquee-track {
-  display: flex; gap: 60px; width: max-content;
-  animation: marquee 70s linear infinite;
-  font-family: var(--f-serif-en);
-  font-size: 1.4rem; letter-spacing: 0.18em;
+.market-ticker-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marketTicker 42s linear infinite;
 }
-.marquee-track span { display: inline-flex; align-items: center; gap: 60px; white-space: nowrap; }
-.marquee-track .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--c-gold); display: inline-block; }
-@keyframes marquee { to { transform: translateX(-50%); } }
+.market-ticker:hover .market-ticker-track {
+  animation-play-state: paused;
+}
+.ticker-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 13px 28px;
+  white-space: nowrap;
+  font-family: var(--f-sans-en);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  border-right: 1px solid rgba(245, 242, 235, 0.08);
+}
+.ticker-item strong {
+  color: var(--c-cream);
+  font-weight: 500;
+}
+.ticker-item em {
+  font-style: normal;
+  font-weight: 600;
+}
+.ticker-item .up { color: #49c47f; }
+.ticker-item .down { color: #e57373; }
+@keyframes marketTicker {
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- Service modal ---------- */
+.service-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+.service-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.service-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 13, 28, 0.66);
+  backdrop-filter: blur(10px);
+}
+.service-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(640px, 100%);
+  max-height: min(78vh, 720px);
+  overflow: auto;
+  background: #fff;
+  color: var(--c-text);
+  border-radius: 12px;
+  padding: 34px;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
+  transform: translateY(18px) scale(0.98);
+  transition: transform .25s ease;
+}
+.service-modal.is-open .service-modal__panel {
+  transform: translateY(0) scale(1);
+}
+.service-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(11, 30, 63, 0.12);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--c-text);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.service-modal__eyebrow {
+  display: block;
+  color: var(--c-gold);
+  font-family: var(--f-sans-en);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.service-modal h3 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  margin: 0 42px 14px 0;
+}
+.service-modal p {
+  color: var(--c-text-soft);
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+.service-modal ul {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 26px;
+}
+.service-modal li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--c-text-soft);
+  line-height: 1.6;
+}
+.service-modal li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-gold);
+}
+.service-modal__cta {
+  margin-top: 4px;
+}
+body.modal-open {
+  overflow: hidden;
+}
 
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
-  .testimonial-track { animation: none !important; }
+  .testimonial-track,
+  .market-ticker-track { animation: none !important; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .hero-title .line, .reveal-up { opacity: 1 !important; transform: none !important; }
 }
@@ -2163,20 +2290,32 @@ a.cia-row--featured:hover::before {
   .testimonial-card { min-height: 320px; padding: 22px 20px; }
   .testimonial-card p { font-size: 0.92rem; }
 
-  .marquee {
-    padding: 10px 0;
+  .market-ticker-track {
+    animation-duration: 54s;
   }
-  .marquee-track {
-    gap: 34px;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
+  .ticker-item {
+    padding: 9px 18px;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    gap: 8px;
   }
-  .marquee-track span {
-    gap: 28px;
+
+  .service-modal {
+    padding: 14px;
+    place-items: end center;
   }
-  .marquee-track .dot {
-    width: 4px;
-    height: 4px;
+  .service-modal__panel {
+    width: 100%;
+    max-height: 82vh;
+    padding: 26px 20px 22px;
+    border-radius: 12px 12px 0 0;
+  }
+  .service-modal h3 {
+    font-size: 1.35rem;
+  }
+  .service-modal p,
+  .service-modal li {
+    font-size: 0.9rem;
   }
 
   .cta-inner {

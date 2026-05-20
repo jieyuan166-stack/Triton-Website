@@ -107,7 +107,7 @@
   <link rel="icon" href="/favicon.ico?v=b3251030" sizes="any" />
   <link rel="icon" href="/icon.png?v=613e0621" type="image/png" sizes="512x512" />
   <link rel="apple-touch-icon" href="/apple-icon.png?v=69cac185" type="image/png" sizes="180x180" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=remove-scroll-cue-20260519" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=ticker-service-modal-20260519" />
 </head>
 <body class="home-page">
 
@@ -181,6 +181,24 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== Financial Ticker ===== -->
+  <section class="market-ticker" aria-label="Market snapshot">
+    <div class="market-ticker-track">
+      <span class="ticker-item"><strong>S&amp;P 500</strong> 7,353.61 <em class="down">▼ -0.67%</em></span>
+      <span class="ticker-item"><strong>NASDAQ</strong> 25,870.71 <em class="down">▼ -0.84%</em></span>
+      <span class="ticker-item"><strong>DOW JONES</strong> 48,214.32 <em class="up">▲ +0.18%</em></span>
+      <span class="ticker-item"><strong>TSX</strong> 29,612.44 <em class="up">▲ +0.22%</em></span>
+      <span class="ticker-item"><strong>GOLD</strong> 4,497.70 <em class="up">▲ +0.30%</em></span>
+      <span class="ticker-item"><strong>USD/CAD</strong> 1.3821 <em class="down">▼ -0.11%</em></span>
+      <span class="ticker-item"><strong>S&amp;P 500</strong> 7,353.61 <em class="down">▼ -0.67%</em></span>
+      <span class="ticker-item"><strong>NASDAQ</strong> 25,870.71 <em class="down">▼ -0.84%</em></span>
+      <span class="ticker-item"><strong>DOW JONES</strong> 48,214.32 <em class="up">▲ +0.18%</em></span>
+      <span class="ticker-item"><strong>TSX</strong> 29,612.44 <em class="up">▲ +0.22%</em></span>
+      <span class="ticker-item"><strong>GOLD</strong> 4,497.70 <em class="up">▲ +0.30%</em></span>
+      <span class="ticker-item"><strong>USD/CAD</strong> 1.3821 <em class="down">▼ -0.11%</em></span>
     </div>
   </section>
 
@@ -406,68 +424,61 @@
             <span class="en" data-i18n="svc.en">Comprehensive wealth solutions</span>
           </h2>
         </div>
-        <p data-i18n="svc.desc">从家庭保障到企业传承，从税务优化到信托架构 — 我们提供八大核心服务，覆盖人生与财富的每个关键阶段。</p>
+        <p data-i18n="svc.desc">以家庭、企业和传承目标为核心，提供六大关键财富策略，帮助客户在不同人生阶段做出更清晰的决策。</p>
       </div>
 
-      <div class="service-grid">
-        <article class="service-card">
-          <span class="idx">01 / Family</span>
-          <h3>家庭保障规划</h3>
-          <p>以家庭经济支柱为核心，合理配置人寿保险保额，守护至亲，规避债务与税务风险。</p>
-          <a href="/services/#s1" class="more">VIEW <span class="arrow">→</span></a>
+      <div class="service-grid service-grid--interactive">
+        <article class="service-card" data-service-id="mortgage">
+          <span class="idx">01 / Mortgage</span>
+          <h3>房贷与现金流管理</h3>
+          <p>围绕家庭负债、现金流与保障需求，规划更稳健的还款与风险管理节奏。</p>
+          <button type="button" class="more">Detailed Solution <span class="arrow">→</span></button>
         </article>
-        <article class="service-card">
-          <span class="idx">02 / Invest</span>
-          <h3>个人投资规划</h3>
-          <p>TFSA、RRSP、RESP 等注册账户与非注册账户的全盘配置，长线增值与税务筹划并重。</p>
-          <a href="/services/#s2" class="more">VIEW <span class="arrow">→</span></a>
+        <article class="service-card" data-service-id="tax">
+          <span class="idx">02 / Tax</span>
+          <h3>税务控制策略</h3>
+          <p>结合账户配置、保险工具与企业结构，协助降低长期财富积累中的税务摩擦。</p>
+          <button type="button" class="more">Detailed Solution <span class="arrow">→</span></button>
         </article>
-        <article class="service-card">
-          <span class="idx">03 / Corporate</span>
-          <h3>公司保单规划</h3>
-          <p>稳定增值 · 延税优税 · 放大传承 — 企业主优化公司净值与税务的核心工具。</p>
-          <a href="/services/#s3" class="more">VIEW <span class="arrow">→</span></a>
+        <article class="service-card" data-service-id="asset">
+          <span class="idx">03 / Assets</span>
+          <h3>资产增值规划</h3>
+          <p>从注册账户、非注册账户到保险型资产，建立兼顾增长、流动性与安全边际的组合。</p>
+          <button type="button" class="more">Detailed Solution <span class="arrow">→</span></button>
         </article>
-        <article class="service-card">
-          <span class="idx">04 / Leverage</span>
-          <h3>投资贷款计划</h3>
-          <p>合理利用银行杠杆，加速财富增长，扩大投资组合，享受可扣除利息费等多重优势。</p>
-          <a href="/services/#s4" class="more">VIEW <span class="arrow">→</span></a>
-        </article>
-        <article class="service-card">
-          <span class="idx">05 / Health</span>
-          <h3>重疾保障计划</h3>
-          <p>一次性赔付、不限用途，弥补公共医疗外的真空地带，减轻康复期家庭财务压力。</p>
-          <a href="/services/#s5" class="more">VIEW <span class="arrow">→</span></a>
-        </article>
-        <article class="service-card">
-          <span class="idx">06 / Kids</span>
-          <h3>儿童财务规划</h3>
-          <p>分红式儿童保险，惠及祖孙三代，从教育到创业、婚嫁、养老的百年长情陪伴。</p>
-          <a href="/services/#s6" class="more">VIEW <span class="arrow">→</span></a>
-        </article>
-        <article class="service-card">
-          <span class="idx">07 / IFA</span>
-          <h3>保单融资规划 IFA</h3>
-          <p>Immediate Finance Arrangement —「四两拨千斤」实现财富双倍增值的高净值方案。</p>
-          <a href="/services/#s7" class="more">VIEW <span class="arrow">→</span></a>
-        </article>
-        <article class="service-card">
-          <span class="idx">08 / Retire</span>
+        <article class="service-card" data-service-id="retirement">
+          <span class="idx">04 / Retire</span>
           <h3>退休养老规划</h3>
-          <p>以分红式退休型保险为依托建立保险退休计划 IRP，让退休生活从容而丰盈。</p>
-          <a href="/services/#s8" class="more">VIEW <span class="arrow">→</span></a>
+          <p>提前安排退休收入来源、提款顺序与医疗风险，让退休现金流更可预期。</p>
+          <button type="button" class="more">Detailed Solution <span class="arrow">→</span></button>
+        </article>
+        <article class="service-card" data-service-id="estate">
+          <span class="idx">05 / Estate</span>
+          <h3>财富传承规划</h3>
+          <p>围绕遗产税务、受益人安排和资产保护，设计更清晰的家族传承路径。</p>
+          <button type="button" class="more">Detailed Solution <span class="arrow">→</span></button>
+        </article>
+        <article class="service-card" data-service-id="corporate">
+          <span class="idx">06 / Corporate</span>
+          <h3>企业策略规划</h3>
+          <p>帮助企业主处理关键人保障、公司留存资金、股东协议与企业传承议题。</p>
+          <button type="button" class="more">Detailed Solution <span class="arrow">→</span></button>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ===== Marquee strip ===== -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>WEALTH PRESERVATION <span class="dot"></span> TAX OPTIMIZATION <span class="dot"></span> ESTATE PLANNING <span class="dot"></span> CORPORATE INSURANCE <span class="dot"></span> RETIREMENT STRATEGY <span class="dot"></span> FAMILY TRUST <span class="dot"></span></span>
-      <span>WEALTH PRESERVATION <span class="dot"></span> TAX OPTIMIZATION <span class="dot"></span> ESTATE PLANNING <span class="dot"></span> CORPORATE INSURANCE <span class="dot"></span> RETIREMENT STRATEGY <span class="dot"></span> FAMILY TRUST <span class="dot"></span></span>
-    </div>
+  <!-- ===== Service Modal ===== -->
+  <div class="service-modal" id="serviceModal" aria-hidden="true">
+    <div class="service-modal__backdrop" data-service-close></div>
+    <section class="service-modal__panel" role="dialog" aria-modal="true" aria-labelledby="serviceModalTitle">
+      <button type="button" class="service-modal__close" data-service-close aria-label="关闭">×</button>
+      <span class="service-modal__eyebrow" id="serviceModalEyebrow"></span>
+      <h3 id="serviceModalTitle"></h3>
+      <p id="serviceModalIntro"></p>
+      <ul id="serviceModalList"></ul>
+      <a href="/contact/" class="btn btn-gold service-modal__cta">预约咨询 <span class="arrow">→</span></a>
+    </section>
   </div>
 
   <!-- ===== CTA ===== -->
@@ -531,6 +542,6 @@
     </div>
   </footer>
 
-  <script src="/assets/js/main.js?v=reviews-carousel-20260518"></script>
+  <script src="/assets/js/main.js?v=ticker-service-modal-20260519"></script>
 </body>
 </html>
