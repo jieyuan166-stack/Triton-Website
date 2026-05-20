@@ -764,6 +764,9 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   display: flex;
   align-items: center;
   width: max-content;
+  min-width: max-content;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
   animation: marketTicker 42s linear infinite;
 }
 .market-ticker:hover .market-ticker-track {
@@ -772,6 +775,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 .ticker-item {
   display: inline-flex;
   align-items: baseline;
+  flex: 0 0 auto;
   gap: 10px;
   padding: 13px 28px;
   white-space: nowrap;

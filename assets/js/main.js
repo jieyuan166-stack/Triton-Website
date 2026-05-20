@@ -153,8 +153,13 @@
     tickerTrack.innerHTML = `${stamp}${items}${stamp}${items}`;
   };
   if (tickerTrack) {
-    Promise.all(marketSymbols.map(fetchQuote)).then(renderTicker).catch(() => {
+    if (tickerTrack.children.length < 4) {
       renderTicker(marketSymbols.map(item => ({ ...item, ...item.fallback, live: false })));
+    }
+    Promise.all(marketSymbols.map(fetchQuote)).then((quotes) => {
+      if (quotes.some(quote => quote.live)) renderTicker(quotes);
+    }).catch(() => {
+      // Keep the complete server-rendered fallback ticker in place.
     });
   }
 
