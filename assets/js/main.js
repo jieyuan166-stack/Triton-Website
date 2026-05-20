@@ -85,66 +85,159 @@
     revealTargets.forEach(el => el.classList.add('in'));
   }
 
+  // --- Live market ticker ---
+  const tickerTrack = document.getElementById('marketTickerTrack');
+  const marketSymbols = [
+    { label: 'S&P 500', symbol: '^spx', fallback: { close: 7353.61, prev: 7403.05, date: '2026-05-19' } },
+    { label: 'NASDAQ', symbol: '^ndq', fallback: { close: 25870.71, prev: 26090.73, date: '2026-05-19' } },
+    { label: 'DOW JONES', symbol: '^dji', fallback: { close: 49363.88, prev: 49686.12, date: '2026-05-19' } },
+    { label: 'TSX', symbol: '^tsx', fallback: { close: 33741.24, prev: 33832.61, date: '2026-05-19' } },
+    { label: 'GOLD', symbol: 'xauusd', fallback: { close: 4488.46, prev: 4558.16, date: '2026-05-20' } },
+    { label: 'USD/CAD', symbol: 'usdcad', fallback: { close: 1.37549, prev: 1.37448, date: '2026-05-20' } }
+  ];
+  const encodeUrlParam = (value) => String(value).replace(/[%^&?=:/,]/g, (char) => ({
+    '%': '%25',
+    '^': '%5E',
+    '&': '%26',
+    '?': '%3F',
+    '=': '%3D',
+    ':': '%3A',
+    '/': '%2F',
+    ',': '%2C'
+  })[char]);
+  const stooqSymbol = (symbol) => String(symbol).replace(/\^/g, '%5E');
+  const stooqUrl = (symbol) => `https://stooq.com/q/l/?s=${stooqSymbol(symbol)}&f=sd2t2ohlcvcp&h&e=csv`;
+  const proxyUrl = (url) => `https://api.allorigins.win/raw?url=${encodeUrlParam(url)}`;
+  const parseMarketCsv = (csv) => {
+    const rows = csv.trim().split(/\r?\n/);
+    if (rows.length < 2) throw new Error('No market rows returned');
+    const headers = rows[0].split(',');
+    const values = rows[1].split(',');
+    const row = Object.fromEntries(headers.map((header, index) => [header, values[index]]));
+    const close = Number(row.Close);
+    const prev = Number(row.Prev);
+    if (!Number.isFinite(close) || !Number.isFinite(prev)) throw new Error('Invalid quote values');
+    return { close, prev, date: row.Date };
+  };
+  const fetchQuote = async (item) => {
+    const url = stooqUrl(item.symbol);
+    const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    const timeout = controller ? setTimeout(() => controller.abort(), 4500) : null;
+    try {
+      const response = await fetch(proxyUrl(url), { cache: 'no-store', signal: controller?.signal });
+      if (!response.ok) throw new Error(`Market response ${response.status}`);
+      return { ...item, ...(parseMarketCsv(await response.text())), live: true };
+    } catch (error) {
+      return { ...item, ...item.fallback, live: false };
+    } finally {
+      if (timeout) clearTimeout(timeout);
+    }
+  };
+  const formatPrice = (label, value) => {
+    const options = label === 'USD/CAD'
+      ? { minimumFractionDigits: 4, maximumFractionDigits: 4 }
+      : { minimumFractionDigits: 2, maximumFractionDigits: 2 };
+    return value.toLocaleString('en-US', options);
+  };
+  const renderTicker = (quotes) => {
+    if (!tickerTrack || !quotes.length) return;
+    const newestDate = quotes.find(q => q.date)?.date || '';
+    const stamp = `<span class="ticker-item ticker-item--stamp"><strong>${quotes.some(q => q.live) ? 'LIVE MARKET' : 'MARKET CLOSE'}</strong>${newestDate}</span>`;
+    const items = quotes.map((quote) => {
+      const change = quote.close - quote.prev;
+      const pct = quote.prev ? (change / quote.prev) * 100 : 0;
+      const direction = change >= 0 ? 'up' : 'down';
+      const arrow = change >= 0 ? '▲' : '▼';
+      return `<span class="ticker-item"><strong>${quote.label}</strong> ${formatPrice(quote.label, quote.close)} <em class="${direction}">${arrow} ${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%</em></span>`;
+    }).join('');
+    tickerTrack.innerHTML = `${stamp}${items}${stamp}${items}`;
+  };
+  if (tickerTrack) {
+    Promise.all(marketSymbols.map(fetchQuote)).then(renderTicker).catch(() => {
+      renderTicker(marketSymbols.map(item => ({ ...item, ...item.fallback, live: false })));
+    });
+  }
+
   // --- Homepage service modal ---
   const serviceDetails = {
-    mortgage: {
-      eyebrow: 'Mortgage Management',
-      title: '房贷与现金流管理',
-      intro: '把房贷、家庭现金流与保障额度放在同一张图里看，避免单独追求低月供而忽略长期风险。',
+    'family-protection': {
+      eyebrow: 'Family Protection',
+      title: '家庭保障规划',
+      intro: '家庭保障规划从家庭成员、主要经济支柱、债务结构和潜在税务支出一起分析，核心目标是在风险发生时守住家庭生活、资产和责任。',
       points: [
-        '评估家庭收入、负债、紧急备用金和保费预算的平衡点。',
-        '协助规划还款节奏、贷款保护和家庭主要收入来源的风险覆盖。',
-        '根据人生阶段调整现金流安排，让保障和资产积累彼此配合。'
+        '确认家庭主要经济来源，以及父母、配偶、子女在风险发生后的真实资金需求。',
+        '梳理房贷、商业贷款和其它债务，规划债务承接和资产保护方式。',
+        '评估身故时可能产生的税务支出，并用合适的人寿保险保额提供流动性。'
       ]
     },
-    tax: {
-      eyebrow: 'Tax Control',
-      title: '税务控制策略',
-      intro: '通过账户选择、保险工具和企业结构安排，减少财富积累与传承过程中的税务摩擦。',
+    'personal-investment': {
+      eyebrow: 'Personal Investment',
+      title: '个人投资规划',
+      intro: '个人投资规划不只关注投什么，也关注使用什么账户投资。我们把注册账户、非注册账户和保险型资产放在同一套长期结构里比较。',
       points: [
-        '比较 TFSA、RRSP、RESP、非注册账户与保险型资产的使用顺序。',
-        '为企业主评估公司留存资金、股东保障与税务效率。',
-        '配合专业合作人士处理更复杂的税务和信托架构问题。'
+        '比较 TFSA、RRSP、RESP 与非注册账户的税务特点和使用顺序。',
+        '根据家庭现金流、教育金、退休目标和风险承受度配置投资账户。',
+        '定期检视账户比例和投资方向，避免规划与人生阶段脱节。'
       ]
     },
-    asset: {
-      eyebrow: 'Asset Appreciation',
-      title: '资产增值规划',
-      intro: '围绕风险承受度、时间周期和流动性需求，建立可持续调整的长期资产配置。',
+    'corporate-insurance': {
+      eyebrow: 'Corporate Insurance',
+      title: '公司保单规划',
+      intro: '公司保单规划帮助企业主把公司留存资金、税务效率、稳定增值和未来传承放在同一框架下处理。',
       points: [
-        '梳理家庭资产、负债、现金流和既有投资组合。',
-        '选择适合不同账户属性的投资与保险解决方案。',
-        '定期检视组合变化，避免规划和现实资产状态脱节。'
+        '评估公司资金是否高于日常运营所需，以及如何更有效部署。',
+        '使用公司保单兼顾延税优税、资产保护和长期稳定增值。',
+        '为企业传承或股东安排预留免税身故赔偿金带来的流动性。'
       ]
     },
-    retirement: {
-      eyebrow: 'Retirement Planning',
-      title: '退休养老规划',
-      intro: '提前规划退休收入来源、提款顺序、医疗风险与遗产安排，让退休生活更从容。',
+    'leveraged-investment': {
+      eyebrow: 'Leveraged Investment',
+      title: '投资贷款计划',
+      intro: '投资贷款计划通过财务杠杆提高潜在投资增长，但必须建立在现金流、风险承受度和长期策略都清楚的基础上。',
       points: [
-        '估算退休现金流缺口和不同账户的提款优先级。',
-        '评估分红式保险、IRP 等方案在退休收入中的作用。',
-        '兼顾配偶保障、长期护理风险与下一代资产安排。'
+        '评估是否适合使用银行资金参与投资，而不是单纯追求放大收益。',
+        '规划利息支出、投资波动、可扣除利息费用和组合流动性。',
+        '结合独立基金等工具，协助建立更清晰的杠杆投资边界。'
       ]
     },
-    estate: {
-      eyebrow: 'Estate Succession',
-      title: '财富传承规划',
-      intro: '让资产传承不只是“留给谁”，也包括如何更有效、更清楚、更少争议地完成交接。',
+    'critical-illness': {
+      eyebrow: 'Critical Illness',
+      title: '重疾保障计划',
+      intro: '重疾保障计划关注公共医疗之外的成本，例如房贷、收入中断、康复交通、家庭照护和治疗期间的额外支出。',
       points: [
-        '梳理受益人、保单、公司资产和家庭成员责任。',
-        '评估人寿保险在遗产税务和资产流动性中的作用。',
-        '与法律、税务合作机构配合，形成更完整的传承方案。'
+        '通过一次性赔付帮助客户在康复期保留选择权。',
+        '不限用途，可用于家庭支出、债务、护理或治疗相关成本。',
+        '与人寿保险、伤残保障和家庭现金流规划一起设计。'
       ]
     },
-    corporate: {
-      eyebrow: 'Corporate Strategy',
-      title: '企业策略规划',
-      intro: '为企业主处理关键人风险、股东协议、公司资金效率和未来退出安排。',
+    'children-plan': {
+      eyebrow: 'Children Plan',
+      title: '儿童财务规划',
+      intro: '儿童财务规划以长期陪伴为核心，覆盖教育、创业、成家、买房和未来退休等多个阶段。',
       points: [
-        '评估关键人保险、买卖协议资金来源和股东保障。',
-        '分析公司留存资金如何配合保险和投资工具长期使用。',
-        '为企业传承、退休退出和家庭资产保护建立清晰路线。'
+        '结合 RESP 和儿童分红保险计划，为教育与长期资产建立基础。',
+        '通过早期规划争取更长的复利时间和更稳定的保障成本。',
+        '让父母或祖父母的支持以更有结构的方式延续给下一代。'
+      ]
+    },
+    ifa: {
+      eyebrow: 'Immediate Finance Arrangement',
+      title: '保单融资规划 IFA',
+      intro: 'IFA 是面向高净值客户和企业主的进阶策略，通过大额保单、银行融资和其它资产配置形成双轨增长。',
+      points: [
+        '先支付大额保费，再在符合条件下将已付保费从银行借出用于业务或投资。',
+        '保单持续增长，同时原本用于保费的资金可投入房地产、基金、股票或生意运营。',
+        '未来以免税身故赔偿金偿还贷款本金，余额留给受益人，实现借力传承。'
+      ]
+    },
+    irp: {
+      eyebrow: 'Insured Retirement Plan',
+      title: '退休养老规划 IRP',
+      intro: 'IRP 以分红式退休型保险为依托，为退休阶段建立更稳定、可预期且兼顾传承的现金流方案。',
+      points: [
+        '评估现有退休资金来源、账户限制和退休现金流缺口。',
+        '通过保险退休计划补充传统注册账户之外的退休收入来源。',
+        '兼顾退休生活、长期护理风险、配偶保障和下一代资产安排。'
       ]
     }
   };

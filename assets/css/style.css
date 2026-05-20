@@ -324,7 +324,7 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 .testimonial-section {
   background: #F9F8F6;
   overflow: hidden;
-  padding-top: 0;
+  padding-top: clamp(56px, 7vw, 96px);
 }
 
 /* Match the Why Choose Us section rhythm: title column left, content column right. */
@@ -452,25 +452,34 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 .services { background: var(--c-bg-deep); color: var(--c-cream); position: relative; }
 .services h2, .services h3 { color: var(--c-cream); }
 .services .section-head {
-  display: grid; grid-template-columns: 1fr auto; align-items: end;
-  gap: 40px; margin-bottom: 64px;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  align-items: start;
+  gap: 80px;
+  margin-bottom: 64px;
+  text-align: left;
 }
+.services .section-head .section-copy,
 .services .section-head p {
-  color: rgba(245, 242, 235, 0.7); max-width: 520px;
+  color: rgba(245, 242, 235, 0.7);
+  max-width: 720px;
+  margin: 0;
+  text-align: left;
 }
 .service-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
   background: var(--c-line-soft);
   border: 1px solid var(--c-line-soft);
 }
 .service-card {
   background: var(--c-bg-deep);
-  padding: 40px 30px 36px;
+  padding: 34px 26px 30px;
   position: relative;
   transition: all .4s ease;
   cursor: default;
   display: flex; flex-direction: column;
-  min-height: 240px;
+  min-height: 260px;
+  text-align: left;
 }
 .service-card::before {
   content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
@@ -773,6 +782,9 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
 }
 .ticker-item--stamp strong {
   color: var(--c-gold);
+}
+.ticker-item--loading {
+  min-width: 280px;
 }
 .ticker-item em {
   font-style: normal;
@@ -1998,6 +2010,7 @@ a.cia-row--featured:hover::before {
 @media (max-width: 1024px) {
   .service-grid { grid-template-columns: repeat(2, 1fr); }
   .intro-grid { grid-template-columns: 1fr; gap: 50px; }
+  .services .section-head { grid-template-columns: 1fr; gap: 34px; }
   .testimonial-grid { grid-template-columns: 1fr; gap: 34px; }
   .cta-inner { display: block; padding: 30px 24px; }
   .cta-inner > div { display: block; }
@@ -2289,7 +2302,7 @@ a.cia-row--featured:hover::before {
   body.mobile-compact-page .feature-item .num { font-size: 0.68rem; margin-bottom: 8px; }
   body.mobile-compact-page .feature-item h4 { font-size: 0.98rem; margin-bottom: 6px; }
   body.mobile-compact-page .feature-item p { font-size: 0.84rem; line-height: 1.45; }
-  .testimonial-section { padding-top: 0; }
+  .testimonial-section { padding-top: 42px; }
   .testimonial-grid { gap: 24px; }
   .testimonial-rail { --testimonial-gap: 14px; --testimonial-card-width: calc(100vw - (var(--pad-x) * 2)); }
   .testimonial-track { animation-duration: 72s; }
