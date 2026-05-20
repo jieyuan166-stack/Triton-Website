@@ -2317,7 +2317,7 @@ a.cia-row--featured:hover::before {
   .testimonial-card p { font-size: 0.92rem; }
 
   .market-ticker-track {
-    animation-duration: 28s;
+    animation-duration: 10s;
   }
   .ticker-item {
     padding: 9px 18px;
