@@ -768,6 +768,12 @@ h1, h2, h3, h4 { font-family: var(--f-serif-cn); font-weight: 600; line-height: 
   color: var(--c-cream);
   font-weight: 500;
 }
+.ticker-item--stamp {
+  color: rgba(245, 242, 235, 0.48);
+}
+.ticker-item--stamp strong {
+  color: var(--c-gold);
+}
 .ticker-item em {
   font-style: normal;
   font-weight: 600;
@@ -2367,20 +2373,20 @@ a.cia-row--featured:hover::before {
     border-radius: 8px;
   }
   .service-card .idx {
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     letter-spacing: 0.12em;
   }
   .service-card h3 {
-    font-size: 1rem;
-    margin: 9px 0 6px;
+    font-size: 1.08rem;
+    margin: 10px 0 7px;
   }
   .service-card p {
-    font-size: 0.84rem;
-    line-height: 1.5;
+    font-size: 0.92rem;
+    line-height: 1.58;
   }
   .service-card .more {
-    margin-top: 12px;
-    font-size: 0.62rem;
+    margin-top: 14px;
+    font-size: 0.72rem;
     letter-spacing: 0.14em;
   }
 
