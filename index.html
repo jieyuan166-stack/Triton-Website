@@ -107,7 +107,7 @@
   <link rel="icon" href="/favicon.ico?v=b3251030" sizes="any" />
   <link rel="icon" href="/icon.png?v=613e0621" type="image/png" sizes="512x512" />
   <link rel="apple-touch-icon" href="/apple-icon.png?v=69cac185" type="image/png" sizes="180x180" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=partners-logo-color-20260520" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=tradingview-market-data-20260524" />
 </head>
 <body class="home-page">
 
@@ -189,22 +189,26 @@
   </section>
 
   <!-- ===== Financial Ticker ===== -->
-  <section class="market-ticker" aria-label="Market snapshot" data-market-ticker>
-    <div class="market-ticker-track" id="marketTickerTrack" aria-live="off">
-      <span class="ticker-item ticker-item--stamp"><strong>MARKET CLOSE</strong>2026-05-19</span>
-      <span class="ticker-item"><strong>S&amp;P 500</strong> 7,353.61 <em class="down">▼ -0.67%</em></span>
-      <span class="ticker-item"><strong>NASDAQ</strong> 25,870.71 <em class="down">▼ -0.84%</em></span>
-      <span class="ticker-item"><strong>DOW JONES</strong> 49,363.88 <em class="down">▼ -0.65%</em></span>
-      <span class="ticker-item"><strong>TSX</strong> 33,741.24 <em class="down">▼ -0.27%</em></span>
-      <span class="ticker-item"><strong>GOLD</strong> 4,488.46 <em class="down">▼ -1.53%</em></span>
-      <span class="ticker-item"><strong>USD/CAD</strong> 1.3755 <em class="up">▲ +0.07%</em></span>
-      <span class="ticker-item ticker-item--stamp" aria-hidden="true"><strong>MARKET CLOSE</strong>2026-05-19</span>
-      <span class="ticker-item" aria-hidden="true"><strong>S&amp;P 500</strong> 7,353.61 <em class="down">▼ -0.67%</em></span>
-      <span class="ticker-item" aria-hidden="true"><strong>NASDAQ</strong> 25,870.71 <em class="down">▼ -0.84%</em></span>
-      <span class="ticker-item" aria-hidden="true"><strong>DOW JONES</strong> 49,363.88 <em class="down">▼ -0.65%</em></span>
-      <span class="ticker-item" aria-hidden="true"><strong>TSX</strong> 33,741.24 <em class="down">▼ -0.27%</em></span>
-      <span class="ticker-item" aria-hidden="true"><strong>GOLD</strong> 4,488.46 <em class="down">▼ -1.53%</em></span>
-      <span class="ticker-item" aria-hidden="true"><strong>USD/CAD</strong> 1.3755 <em class="up">▲ +0.07%</em></span>
+  <section class="market-ticker market-ticker--live" aria-label="Market Data" data-market-ticker>
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+      {
+        "symbols": [
+          { "proName": "SP:SPX", "title": "S&P 500" },
+          { "proName": "NASDAQ:NDX", "title": "NASDAQ 100" },
+          { "proName": "TVC:DJI", "title": "DOW JONES" },
+          { "proName": "TSX:TSX", "title": "TSX" },
+          { "proName": "OANDA:XAUUSD", "title": "GOLD" },
+          { "proName": "FX_IDC:USDCAD", "title": "USD/CAD" }
+        ],
+        "showSymbolLogo": false,
+        "isTransparent": true,
+        "displayMode": "adaptive",
+        "colorTheme": "dark",
+        "locale": "en"
+      }
+      </script>
     </div>
   </section>
 
@@ -562,6 +566,6 @@
     </div>
   </footer>
 
-  <script src="/assets/js/main.js?v=partners-logo-color-20260520"></script>
+  <script src="/assets/js/main.js?v=tradingview-market-data-20260524"></script>
 </body>
 </html>
