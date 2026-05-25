@@ -2338,22 +2338,22 @@ a.cia-row--featured:hover::before {
     animation-duration: 30s;
   }
   .market-ticker--live {
-    min-height: 48px;
-    height: 48px;
+    min-height: 54px;
+    height: 54px;
     overflow: hidden;
   }
   .market-ticker--live .tradingview-widget-container,
   .market-ticker--live .tradingview-widget-container__widget {
-    min-height: 48px !important;
-    height: 48px !important;
+    min-height: 54px !important;
+    height: 54px !important;
     overflow: hidden;
   }
   .market-ticker--live iframe {
-    min-height: 56px !important;
-    height: 56px !important;
-    width: 118% !important;
+    min-height: 76px !important;
+    height: 76px !important;
+    width: 134% !important;
     max-width: none !important;
-    transform: translateY(-3px) scale(0.85);
+    transform: scale(0.75);
     transform-origin: left top;
   }
   .ticker-item {
